@@ -1,7 +1,55 @@
 extends ../template
 
 block content
-
-        
+  section.about
+    .about__life
+      h1.about__title обо мне
+      .about__descr
+        .about__avatar
+          img(src="")
+        .about__description
+          h2.about__descr__title кто я
+          p.about__text Lorem
+          p.about__text asdfasfasdfasf
+          p.about__text adfasddfhdfhdsgdg
+    .about__skills
+      h2.skills__title Чем я могу быть вам полезен
+      p.skills__descr
+      ul.skills__list
+        li.skills__item Frontend
+          ul.skills__item__list
+            li.item__list-item html
+            li.item__list-item css
+            li.item__list-item js
+        li.skills__item Backend
+          ul.skills__item__list
+            li.item__list-item php
+            li.item__list-item mySQL
+            li.item__list-item node
+            li.item__list-item mongo DB
+        li.skills__item WorkFlow
+          ul.skills__item__list
+            li.item__list-item git
+            li.item__list-item gulp
+            li.item__list-item bower
+  section.about__map
+    .contacts
+      ul.contacts__list
+        li.contacts__item
+          a.contacts__href
+            img.contacts__img(src="") 
+            p.contacts__name skype
+        li.contacts__item
+          a.contacts__href
+            img.contacts__img(src="")
+            p.contacts__name email
+        li.contacts__item
+          a.contacts__href
+            img.contacts__img(src="")
+            p.contacts__name phone
+        li.contacts__item
+          a.contacts__href
+            img.contacts__img(src="")
+            p.contacts__name place
         
         
