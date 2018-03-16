@@ -1,0 +1,31 @@
+section.section.hero
+  .hero__top
+    .hero__socials
+      ul.socials.header
+        each item in ['vk', 'fb', 'in']
+          li.socials__item
+            a(href="" class = `href__socials socials__item_${item}`)
+    .hero__hamburger
+      ul.hamburger
+        li.hamburger__item
+        li.hamburger__item
+        li.hamburger__item
+  .hero__description
+    .hero__presentation
+      .hero__img
+        img.avatar(src = "")
+      .hero__descr
+        .hero__name Владимир Астахов
+        .hero__text Личный сайт веб разработчика
+        ul.socials.description__socials
+          each item in ['vk', 'fb', 'in']
+            li.socials__item
+              a(href="" class = `href__socials socials__item_${item}`)
+      .hero__menu
+        ul.menu
+          li.menu__item
+            a(href="./my-works.html") Мои работы
+          li.menu__item 
+            a(href="./about.html") Обо мне
+          li.menu__item 
+            a(href="./blog.html") Блог

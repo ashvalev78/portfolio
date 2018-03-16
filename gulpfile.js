@@ -1,4 +1,4 @@
-// Добавить создание спрайтов
+// Add sprites
 
 const gulp          = require('gulp');
 const pug           = require('gulp-pug');
@@ -14,6 +14,7 @@ const babel         = require("gulp-babel");
 const concat        = require("gulp-concat");
 const eslint        = require("eslint");
 
+// paths to the files destination
 const paths = {
     root: './build',
     templates: {
@@ -45,7 +46,7 @@ function useBabel () {
         .pipe(gulp.dest("dist"));
 }
 
-// линтинг js
+// linting js
 function lint () {
     return gulp.src('src/**/*.js')
         .pipe(eslint())
@@ -60,7 +61,7 @@ function templates() {
         .pipe(gulp.dest(paths.root));
 }
 
-// scss - сжатие и переименование
+// scss - compression and renaming
 function styles() {
     return gulp.src('./src/styles/app.scss')
         .pipe(sourcemaps.init())
@@ -70,7 +71,7 @@ function styles() {
         .pipe(gulp.dest(paths.styles.dest))
 }
 
-// удаление
+// deleting
 function clean() {
     return del(paths.root);
 }
@@ -90,7 +91,7 @@ function server() {
     browserSync.watch(paths.root + '/**/*.*', browserSync.reload);
 }
 
-// перенос картинок
+// images transfer
 function images() {
     return gulp.src(paths.images.src)
         .pipe(gulp.dest(paths.images.dest));
@@ -101,6 +102,8 @@ exports.styles = styles;
 exports.clean = clean;
 exports.images = images;
 
+
+// watcher
 function watch() {
     gulp.watch(paths.styles.src, styles);
     gulp.watch(paths.templates.src, templates);
@@ -110,6 +113,7 @@ function watch() {
     gulp.watch(paths.scripts.src, lint);
 }
 
+// default task
 gulp.task('default', gulp.series(
     clean,
     gulp.parallel(styles, templates, images, scripts),
