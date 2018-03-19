@@ -7,80 +7,51 @@
     <meta content="" name="keywords">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
-    <link rel="stylesheet" href="../../node_modules/normalize.css/normalize.css">
     <link rel="stylesheet" href="/assets/styles/app.min.css">
     <script src="/assets/scripts/bundle.js" defer></script>
   </head>
   <body>
-    <section class="section hero">
-      <div class="hero__top">
-        <div class="hero__socials">
-          <ul class="socials header">
-            <li class="socials__item"><a class="href__socials socials__item_vk" href=""></a></li>
-            <li class="socials__item"><a class="href__socials socials__item_fb" href=""></a></li>
-            <li class="socials__item"><a class="href__socials socials__item_in" href=""></a></li>
-          </ul>
-        </div>
-        <div class="hero__hamburger">
-          <ul class="hamburger">
-            <li class="hamburger__item"></li>
-            <li class="hamburger__item"></li>
-            <li class="hamburger__item"></li>
-          </ul>
-        </div>
-      </div>
+    <section class="welcome__section"><a class="hero__auth" href="">Авторизация</a>
       <div class="hero__description">
         <div class="hero__presentation">
-          <div class="hero__img"><img class="avatar" src=""></div>
+          <div class="hero__img"><img class="avatar" src="assets/images/im/avatar.jpg"></div>
           <div class="hero__descr">
-            <div class="hero__name">Владимир Астахов</div>
-            <div class="hero__text">Личный сайт веб разработчика</div>
-            <ul class="socials description__socials">
-              <li class="socials__item"><a class="href__socials socials__item_vk" href=""></a></li>
-              <li class="socials__item"><a class="href__socials socials__item_fb" href=""></a></li>
-              <li class="socials__item"><a class="href__socials socials__item_in" href=""></a></li>
-            </ul>
+            <div class="hero__name welcome">Александр Швалев</div>
+            <div class="hero__text welcome">Личный сайт веб разработчика</div>
           </div>
+          <ul class="socials description__socials">
+            <li class="socials__item"><a class="href__socials" href="">
+                      <svg class="icon icon-vk green_mod">
+                        <use xlink:href="assets/images/icons/sprite.svg#vk"></use>
+                      </svg></a></li>
+            <li class="socials__item"><a class="href__socials" href="">
+                      <svg class="icon icon-github green_mod">
+                        <use xlink:href="assets/images/icons/sprite.svg#github"></use>
+                      </svg></a></li>
+            <li class="socials__item"><a class="href__socials" href="">
+                      <svg class="icon icon-in green_mod">
+                        <use xlink:href="assets/images/icons/sprite.svg#in"></use>
+                      </svg></a></li>
+          </ul>
           <div class="hero__menu">
             <ul class="menu">
-              <li class="menu__item"><a href="./my-works.html">Мои работы</a></li>
-              <li class="menu__item"> <a href="./about.html">Обо мне</a></li>
-              <li class="menu__item"> <a href="./blog.html">Блог</a></li>
+              <li class="menu__item"><a href="./my-works.html">
+                  <div class="menu__item-href">Мои работы</div></a></li>
+              <li class="menu__item"> <a href="./about.html">
+                  <div class="menu__item-href">Обо мне</div></a></li>
+              <li class="menu__item"> <a href="./blog.html">
+                  <div class="menu__item-href">Блог</div></a></li>
             </ul>
           </div>
         </div>
       </div>
-    </section>
-    <h1>Главная</h1>
-    <form>
-      <label for="email">email</label>
-      <input name="email" id="email">
-      <label for="password">password</label>
-      <input name="password" id="password">
-      <button>Войти</button>
-    </form>
-    <section class="footer">
-      <div class="footer__top_content">
-        <ul class="footer__menu">
-          <li class="footer__item">Мои работы</li>
-          <li class="footer__item">Обо мне</li>
-          <li class="footer__item">Блог</li>
-          <li class="footer__item">Авторизация</li>
-        </ul>
-        <ul class="footer__socials">
-          <li class="footer__social-item"><a class="footer-social" href=""><img class="footer-social-img" src=""></a></li>
-          <li class="footer__social-item"><a class="footer-social" href=""><img class="footer-social-img" src=""></a></li>
-          <li class="footer__social-item"><a class="footer-social" href=""><img class="footer-social-img" src=""></a></li>
-        </ul>
-      </div>
-      <div class="footer__bot_content">
-        <div class="right__text">
-          <p class="bottom__descr">Я разработчик из СПб... ля-ля-ля</p>
-        </div>
-        <div class="left__text">
-          <p class="bottom__descr">Александр Швалев | создано с любовью в LoftSchool 2018</p>
-        </div>
-      </div>
+      <form class="auth__welcome">
+        <label for="email">email</label>
+        <input name="email" id="email">
+        <label for="password">password</label>
+        <input name="password" id="password">
+        <button>Войти</button>
+      </form>
     </section>
   </body>
 </html>

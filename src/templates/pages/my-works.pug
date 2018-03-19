@@ -4,4 +4,40 @@ block variables
     - var title = 'Мои работы'
 
 block content
-    h1 Мои работы
+  include ../common/menu
+    section.works
+      h1 Мои работы
+      .works__slider
+    section.reviews__callback
+      h1 Что обо мне говорят
+      .people__reviews
+        ul.reviews__list
+          li.review-item
+            p.review__text
+            .reviewer
+              img.reviewer__img
+              .reviewer__descr
+                .reviewer__name
+                .reviewer__position
+          li.review-item
+            p.review__text
+            .reviewer
+              img.reviewer__img
+              .reviewer__descr
+                .reviewer__name
+                .reviewer__position
+      .callback__form
+        .callback__title
+        form.callback-form
+          label.callback__name
+            input.user__name(placeholder = 'Имя')
+          label.callback__email
+            input.user__email(placeholder = 'Email')
+          label.callback__msg
+            textarea.user__msg(placeholder = 'Сообщение')
+          .form__buttons
+            button.enter__msg Отправить
+            button.delete__msg Очистить
+  include ../common/footer.pug
+            
+    

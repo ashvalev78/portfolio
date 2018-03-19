@@ -1,31 +1,21 @@
+include ../common/mixins
+
 section.section.hero
   .hero__top
     .hero__socials
-      ul.socials.header
-        each item in ['vk', 'fb', 'in']
+      ul.socials__header
+        each item in ['vk', 'github', 'in']
           li.socials__item
-            a(href="" class = `href__socials socials__item_${item}`)
+            a(href="" class = 'href__socials')
+              +icon(`${item}`, "white_mod")
     .hero__hamburger
       ul.hamburger
         li.hamburger__item
         li.hamburger__item
         li.hamburger__item
-  .hero__description
-    .hero__presentation
+  .hero__description-menu
       .hero__img
-        img.avatar(src = "")
+        img.avatar(src = "assets/images/im/avatar.jpg")
       .hero__descr
-        .hero__name Владимир Астахов
-        .hero__text Личный сайт веб разработчика
-        ul.socials.description__socials
-          each item in ['vk', 'fb', 'in']
-            li.socials__item
-              a(href="" class = `href__socials socials__item_${item}`)
-      .hero__menu
-        ul.menu
-          li.menu__item
-            a(href="./my-works.html") Мои работы
-          li.menu__item 
-            a(href="./about.html") Обо мне
-          li.menu__item 
-            a(href="./blog.html") Блог
+        .hero__name-menu Александр Швалев
+        .hero__text-menu Личный сайт веб разработчика

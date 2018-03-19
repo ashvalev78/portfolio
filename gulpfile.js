@@ -1,18 +1,19 @@
-// Add sprites
-
-const gulp          = require('gulp');
-const pug           = require('gulp-pug');
-const sass          = require('gulp-sass');
-const rename        = require('gulp-rename');
-const sourcemaps    = require('gulp-sourcemaps');
-const del           = require('del');
-const browserSync   = require('browser-sync').create();
-const gulpWebpack   = require('gulp-webpack');
-const webpack       = require('webpack');
+const gulp = require('gulp');
+const $gp = require("gulp-load-plugins")();
+const pug = require('gulp-pug');
+const sass = require('gulp-sass');
+const rename = require('gulp-rename');
+const sourcemaps = require('gulp-sourcemaps');
+const del = require('del');
+const browserSync = require('browser-sync').create();
+const gulpWebpack = require('gulp-webpack');
+const webpack = require('webpack');
 const webpackConfig = require('./webpack.config.js');
-const babel         = require("gulp-babel");
-const concat        = require("gulp-concat");
-const eslint        = require("eslint");
+const babel = require("gulp-babel");
+const concat = require("gulp-concat");
+const eslint = require("eslint");
+var svgSprite = require("gulp-svg-sprite");
+
 
 // paths to the files destination
 const paths = {
@@ -27,7 +28,9 @@ const paths = {
     },
     images: {
         src: 'src/images/**/*.*',
-        dest: 'build/assets/images/'
+        dest: 'build/assets/images/',
+        svg: 'src/images/icons/*.svg',
+        svgDest: 'build/assets/images/icons/'
     },
     scripts: {
         src: 'src/scripts/**/*.js',
@@ -35,19 +38,66 @@ const paths = {
     }
 };
 
+// SVG sprites
+gulp.task("svg", done => {
+    const prettySvgs = () => {
+        return gulp
+            .src(paths.images.svg)
+            .pipe(
+                $gp.svgmin({
+                    js2svg: {
+                        pretty: true
+                    }
+                })
+            )
+            .pipe(
+                $gp.cheerio({
+                    run($) {
+                        $("[fill], [stroke], [style]")
+                            .removeAttr("fill")
+                            .removeAttr("stroke")
+                            .removeAttr("style");
+                    },
+                    parserOptions: {xmlMode: true}
+                })
+            )
+            .pipe($gp.replace("&gt;", ">"));
+    };
+
+    prettySvgs()
+        .pipe(
+            $gp.svgSprite({
+                mode: {
+                    symbol: {
+                        sprite: "../sprite.svg"
+                    }
+                }
+            })
+        )
+        .pipe(gulp.dest(paths.images.svgDest));
+
+    prettySvgs().pipe(
+        $gp.sassInlineSvg({
+            destDir: "src/styles/icons/"
+        })
+    );
+
+    done();
+});
+
 
 // babel
-function useBabel () {
+function useBabel() {
     return gulp.src("src/**/*.js")
         .pipe(sourcemaps.init())
         .pipe(babel())
         .pipe(concat("all.js"))
         .pipe(sourcemaps.write("."))
-        .pipe(gulp.dest("dist"));
+        .pipe(gulp.dest(paths.scripts.dest));
 }
 
 // linting js
-function lint () {
+function lint() {
     return gulp.src('src/**/*.js')
         .pipe(eslint())
         .pipe(eslint.format())
@@ -57,7 +107,7 @@ function lint () {
 // pug
 function templates() {
     return gulp.src(paths.templates.pages)
-        .pipe(pug({ pretty: true }))
+        .pipe(pug({pretty: true}))
         .pipe(gulp.dest(paths.root));
 }
 
@@ -116,6 +166,6 @@ function watch() {
 // default task
 gulp.task('default', gulp.series(
     clean,
-    gulp.parallel(styles, templates, images, scripts),
+    gulp.parallel("svg", templates, images, scripts, styles),
     gulp.parallel(watch, server)
 ));

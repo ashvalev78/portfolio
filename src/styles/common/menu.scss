@@ -1,0 +1,58 @@
+.socials__header {
+  display: flex;
+  position: absolute;
+  top: pxRem(30px);
+  left: pxRem(30px);
+}
+
+.hero {
+  background: url("../images/im/mountains.jpg") center center no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: pxRem(620px);
+}
+
+.white_mod {
+  fill: #6fc1c1;
+  height: pxRem(30px);
+  width: pxRem(30px);
+
+  &:hover {
+    fill: white;
+  }
+}
+
+.hero__description-menu {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__descr {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__name-menu {
+  color: white;
+  width: 100%;
+  text-align: center;
+  font-family: "Roboto Medium";
+  font-size: pxRem(35px);
+}
+
+.hero__text-menu {
+  color: white;
+  width: 100%;
+  text-align: center;
+  font-family: "Roboto Light";
+  color: #93b8c1;
+  font-size: pxRem(16px);
+}

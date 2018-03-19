@@ -4,8 +4,9 @@ block variables
     - var title = 'Добро пожаловать'
 
 block content
-    h1 Главная
-    form
+  section.welcome__section
+    include ./welcome
+    form.auth__welcome
         label(for="email") email
         input(name="email" id="email")
         label(for="password") password

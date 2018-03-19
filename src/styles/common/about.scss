@@ -1,0 +1,72 @@
+.about {
+  width: 100%;
+  position: absolute;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  top: 40%;
+}
+
+.about__avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar__about {
+  width: pxRem(340px);
+  height: pxRem(340px);
+}
+
+.about__life {
+  display: grid;
+  grid-template-rows: pxRem(230px) 1fr;
+  background-color: #EFEEE9;
+  background: url(about_bg_left(#EFEEE9, #EFEEE9)) no-repeat;
+}
+
+.about__title{
+  margin-top: pxRem(100px);
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  font-size: pxRem(63px);
+  font-family: "BERNIER Regular";
+  color: #373e42;
+}
+
+.about__descr__title {
+  color: #455a64;
+  font-size: pxRem(35px);
+  font-family: "BERNIER Regular";
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  text-align: justify;
+}
+
+.about__text {
+  padding: 0 pxRem(75px) 0 pxRem(75px);
+  color: #455a64;
+  font-family: "Roboto Regular";
+  font-size: pxRem(16px);
+}
+
+.descr__end {
+  margin-bottom: pxRem(45px);
+}
+
+.about__skills {
+  background-image: url(about_bg_right(#eeebdf, #eeebdf));
+}
+
+.skills__title {
+  color: #455a64;
+  font-size: pxRem(35px);
+  font-family: "BERNIER Regular";
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  text-align: justify;
+
+}

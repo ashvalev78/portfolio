@@ -1,0 +1,26 @@
+include ../common/mixins
+
+a.hero__auth(href="") Авторизация
+.hero__description
+  .hero__presentation
+    .hero__img
+      img.avatar(src = "assets/images/im/avatar.jpg")
+    .hero__descr
+      .hero__name.welcome Александр Швалев
+      .hero__text.welcome Личный сайт веб разработчика
+    ul.socials.description__socials
+      each item in ['vk', 'github', 'in']
+        li.socials__item
+          a(href="" class = 'href__socials')
+            +icon(`${item}`, "green_mod")
+    .hero__menu
+      ul.menu
+        li.menu__item
+          a(href="./my-works.html")
+            .menu__item-href Мои работы
+        li.menu__item 
+          a(href="./about.html")
+            .menu__item-href Обо мне
+        li.menu__item 
+          a(href="./blog.html")
+            .menu__item-href Блог
