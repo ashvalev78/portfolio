@@ -26,11 +26,23 @@
   }
 }
 
+.white {
+  fill: #c0cfd6;
+  width: pxRem(25px);
+  height: pxRem(18px);
+
+  &:hover {
+    fill: white;
+  }
+}
+
 .hero__description-menu {
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  top: pxRem(150px);
 }
 
 .hero__descr {
@@ -55,4 +67,25 @@
   font-family: "Roboto Light";
   color: #93b8c1;
   font-size: pxRem(16px);
+}
+
+.arrow__down-href {
+  position: absolute;
+  top: pxRem(415px);
+}
+
+.arrow__dow-img {
+  fill: white;
+}
+
+.hero__hamburger {
+  position: absolute;
+  top: pxRem(26px);
+  right: pxRem(26px);
+}
+
+.ham_mod {
+  fill: white;
+  width: pxRem(42px);
+  height: pxRem(42px);
 }

@@ -9,13 +9,13 @@ section.section.hero
             a(href="" class = 'href__socials')
               +icon(`${item}`, "white_mod")
     .hero__hamburger
-      ul.hamburger
-        li.hamburger__item
-        li.hamburger__item
-        li.hamburger__item
+      a.hamburger-href
+        +icon('hamburger', 'ham_mod')
   .hero__description-menu
-      .hero__img
-        img.avatar(src = "assets/images/im/avatar.jpg")
-      .hero__descr
-        .hero__name-menu Александр Швалев
-        .hero__text-menu Личный сайт веб разработчика
+    .hero__img
+      img.avatar(src = "assets/images/im/avatar.jpg")
+    .hero__descr
+      .hero__name-menu Александр Швалев
+      .hero__text-menu Личный сайт веб разработчика
+  a.arrow__down-href(href="#")
+    +icon('arrow_down', 'white')

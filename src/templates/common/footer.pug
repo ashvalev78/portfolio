@@ -1,26 +1,28 @@
+include ../common/mixins
+
 section.footer
   .footer__top_content
     ul.footer__menu
       li.footer__item 
-        a.footer__menu(href="/my-works.html") Мои работы
+        a.footer__menu-href(href="/my-works.html") Мои работы
       li.footer__item 
-        a.footer__menu(href="/about.html") Обо мне
+        a.footer__menu-href(href="/about.html") Обо мне
       li.footer__item
-        a.footer__menu(href="/blog.html") Блог
+        a.footer__menu-href(href="/blog.html") Блог
       li.footer__item
-        a.footer__menu(href="/index.html") Авторизация
+        a.footer__menu-href(href="/index.html") Авторизация
     ul.footer__socials
       li.footer__social-item
         a.footer-social(href="")
-          img.footer-social-img(src="")
+          +icon('vk_round', 'footer_mod')
       li.footer__social-item
         a.footer-social(href="")
-          img.footer-social-img(src="")
+          +icon('github_round', 'footer_mod')
       li.footer__social-item
         a.footer-social(href="")
-          img.footer-social-img(src="")
+          +icon('in_round', 'footer_mod')
   .footer__bot_content
-    .right__text
-      p.bottom__descr Я разработчик из СПб... ля-ля-ля
     .left__text
-      p.bottom__descr Александр Швалев | создано с любовью в LoftSchool 2018
+      p.bottom__descr Я веб разработчик из Санкт-Петербурга, и этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool
+    .right__text
+      p.bottom__descr © Александр Швалев | создано с любовью в LoftSchool 2018

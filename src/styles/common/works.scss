@@ -1,0 +1,185 @@
+.works {
+  display: flex;
+  flex-flow: column;
+  position: relative;
+  background-color: #faf8f0;
+
+  &__bg {
+    background: url('../images/icons/bg.svg') no-repeat;
+    background-size: cover;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    top: - pxRem(128px);
+    fill: white;
+  }
+
+  &__title {
+    font-family: "BERNIER Regular";
+    color: #373e42;
+    font-size: pxRem(63px);
+    text-align: center;
+    height: pxRem(155px);
+    position: absolute;
+
+    &-bg {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      width: 100%;
+      height: pxRem(155px);
+      position: relative;
+      top: -20%;
+      margin-bottom: pxRem(40px);
+    }
+  }
+
+  &__portfolio {
+    background-color: #f0efe9;
+    width: 100%;
+    height: pxRem(750px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &__href {
+
+  }
+
+  &__slider {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "main main";
+    background-color: #efebe0;
+  }
+
+  &__item-main {
+    grid-area: main;
+  }
+
+  &__item-left {
+    position: relative;
+  }
+
+  &__item-right {
+    position: relative;
+  }
+}
+
+.portf-arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.arrow_mod {
+  fill: white;
+  width: pxRem(45px);
+  height: pxRem(30px);
+}
+
+.grey_mod {
+  fill: #f0eee7;
+  width: pxRem(495px);
+  height: pxRem(145px);
+}
+
+.reviews__callback {
+  background-color: #fbfcfd;
+}
+
+.people__reviews {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  background: url('../images/im/works-about.jpg') center center no-repeat;
+  min-height: 980px;
+}
+
+.review__decor {
+  font-size: pxRem(36px);
+  font-family: "FontAwesome Regular";
+}
+
+.reviews__list {
+  display: flex;
+  justify-content: space-between;
+  width: pxRem(810px);
+}
+
+.callback__form {
+  width: pxRem(380px);
+  height: pxRem(435px);
+  position: relative;
+
+  .callback__bg {
+    background-color: white;
+    opacity: 0.33;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    border-radius: 1%;
+    filter: blur(10px);
+    -webkit-filter: blur(5px);
+     -moz-filter: blur(5px);
+       -o-filter: blur(5px);
+      -ms-filter: blur(5px);
+    //       filter: blur(5px);
+  }
+
+  .callback__wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 100;
+  }
+
+  .callback__title {
+    font-family: "BERNIER Regular";
+    color: #373e42;
+    text-align: center;
+    font-size: pxRem(35px);
+  }
+
+  .callback-form {
+    height:pxRem(340px);
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+
+  .form__buttons {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: pxRem(45px);
+
+    .but {
+      height: 100%;
+      background: #268b8b;
+
+      &:hover {
+        background: #26bbaa;
+      }
+    }
+
+    .enter__msg {
+      flex: 1;
+      border-right: solid;
+      border-color: #82b7b9;
+      border-radius: 0 0 0 5%;
+
+    }
+
+    .delete__msg {
+      flex: 1;
+      border-radius: 0 0 5% 0;
+    }
+  }
+}

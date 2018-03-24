@@ -1,43 +1,65 @@
 extends ../template
 
-block variables
-    - var title = 'Мои работы'
-
 block content
   include ../common/menu
-    section.works
-      h1 Мои работы
+  section.works
+    .works__bg
+      svg()
+    .works__title-bg
+      +icon('works_header', 'grey_mod')
+      h1.works__title Мои работы
+    .works__portfolio
+      .works__href
+        .works__href-title Сайт школы онлайн образования
+        .works__href-href
+        a.works__href-button
+          +icon('link', 'green_mod')
+          .works__href-button-text Посмотреть сайт
       .works__slider
-    section.reviews__callback
-      h1 Что обо мне говорят
-      .people__reviews
-        ul.reviews__list
-          li.review-item
-            p.review__text
-            .reviewer
-              img.reviewer__img
-              .reviewer__descr
-                .reviewer__name
-                .reviewer__position
-          li.review-item
-            p.review__text
-            .reviewer
-              img.reviewer__img
-              .reviewer__descr
-                .reviewer__name
-                .reviewer__position
+        .works__item-main
+          img.works__item-img
+        .works__item-left
+          img.works__item-img
+          a.portf-arrow
+            +icon("portf-arrow-down", 'arrow_mod')
+        .works__item-right
+          img.works__item-img
+          a.portf-arrow
+            +icon("portf-arrow-up", 'arrow_mod')
+  section.reviews__callback
+    .works__title-bg
+      +icon('about_header', 'grey_mod')
+      h1.works__title Что обо мне<br>говорят
+    .people__reviews
+      ul.reviews__list
+        li.review-item
+          .review__decor "
+          p.review__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+          .reviewer
+            img.reviewer__img
+            .reviewer__descr
+              .reviewer__name Ковальчук Дмитрий
+              .reviewer__position основатель Loftschool
+        li.review-item
+          .review__decor "
+          p.review__text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+          .reviewer
+            img.reviewer__img
+            .reviewer__descr
+              .reviewer__name Сабанцев Владимир
+              .reviewer__position преподаватель
       .callback__form
-        .callback__title
-        form.callback-form
-          label.callback__name
-            input.user__name(placeholder = 'Имя')
-          label.callback__email
-            input.user__email(placeholder = 'Email')
-          label.callback__msg
-            textarea.user__msg(placeholder = 'Сообщение')
-          .form__buttons
-            button.enter__msg Отправить
-            button.delete__msg Очистить
-  include ../common/footer.pug
-            
-    
+        .callback__bg
+        .callback__wrapper
+          h1.callback__title Связаться со мной
+          form.callback-form
+            label.callback__name
+              input.user__name(placeholder = 'Имя')
+            label.callback__email
+              input.user__email(placeholder = 'Email')
+            label.callback__msg
+              textarea.user__msg(placeholder = 'Сообщение')
+            .form__buttons
+              button.enter__msg.but Отправить
+              button.delete__msg.but Очистить
+  include ../common/footer

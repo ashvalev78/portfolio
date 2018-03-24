@@ -1,9 +1,22 @@
 .about {
+  display: flex;
+  flex-flow: column;
+  position: relative;
+}
+
+.about__bg {
+  background: url('../images/icons/bg-about.svg') no-repeat;
+  background-size: cover;
   width: 100%;
   position: absolute;
+  top: - pxRem(128px);
+}
+
+.about__content {
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows:  1fr;
   top: 40%;
 }
 
@@ -22,7 +35,6 @@
   display: grid;
   grid-template-rows: pxRem(230px) 1fr;
   background-color: #EFEEE9;
-  background: url(about_bg_left(#EFEEE9, #EFEEE9)) no-repeat;
 }
 
 .about__title{
@@ -57,10 +69,15 @@
 }
 
 .about__skills {
-  background-image: url(about_bg_right(#eeebdf, #eeebdf));
+  background-color: #eeebdf;
+  display: grid;
+  grid-template-rows: pxRem(230px) 0.25fr 2fr;
+  padding-left: pxRem(40px);
+  padding-right: pxRem(10px);
 }
 
 .skills__title {
+  margin-top: pxRem(100px);
   color: #455a64;
   font-size: pxRem(35px);
   font-family: "BERNIER Regular";
@@ -68,5 +85,88 @@
   justify-content: center;
   text-transform: uppercase;
   text-align: justify;
+}
 
+.skills__list {
+  margin-bottom: pxRem(70px);
+}
+
+.skills__descr {
+  color: #455a64;
+  font-family: "Roboto Regular";
+  font-size: pxRem(16px);
+  padding-right: pxRem(70px);
+}
+
+.skills__item {
+  font-size: pxRem(18px);
+  font-family: "Roboto Medium";
+  margin-top: pxRem(40px);
+  color: #455a64;
+}
+
+.skills__item__list {
+  margin-top: pxRem(20px);
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.front, .ws {
+  width: pxRem(400px);
+}
+
+.back {
+  width: pxRem(550px);
+}
+
+.about__map {
+  height: 100vh;
+  min-height: 980px;
+  background: url('../images/im/about-map.png');
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contacts {
+  width: pxRem(380px);
+  height: pxRem(290px);
+  background-color: rgba(252, 252, 252, 0.8);
+  border-radius: 1%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  padding: pxRem(38px);
+}
+
+.icon_mod {
+  fill: #00bea4;
+  height: pxRem(25px);
+  width: pxRem(25px);
+  margin-right: pxRem(10px);
+}
+
+.contacts__title {
+  text-transform: uppercase;
+  font-family: "BERNIER Regular";
+  font-size: pxRem(35px);
+  align-self: center;
+  color: #373e42;
+}
+
+.contacts__item {
+  margin-bottom: pxRem(28px);
+}
+
+.contacts__href {
+  display: flex;
+
+}
+
+.contacts__name {
+  font-family: "Roboto Medium";
+  font-size: pxRem(16px);
+  color: #708288;
 }
