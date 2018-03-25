@@ -1,0 +1,21 @@
+include ../common/mixins
+
+section.section.hero.blog__header
+  .hero__top
+    .hero__socials
+      ul.socials__header
+        each item in ['vk', 'github', 'in']
+          li.socials__item
+            a(href="" class = 'href__socials')
+              +icon(`${item}`, "white_mod")
+    .hero__hamburger
+      a.hamburger-href
+        +icon('hamburger', 'ham_mod')
+  .hero__description-menu
+    .hero__img
+      img.avatar(src = "assets/images/im/avatar.jpg")
+    .hero__descr
+      .hero__name-menu Блог
+      .hero__text-menu Статьи, которые я написал
+  //- a.arrow__down-href(href="#")
+  //-   +icon('arrow_down', 'white')

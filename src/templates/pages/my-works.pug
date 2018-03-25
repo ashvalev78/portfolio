@@ -11,9 +11,9 @@ block content
     .works__portfolio
       .works__href
         .works__href-title Сайт школы онлайн образования
-        .works__href-href
+        .works__href-skills html, css, javascript
         a.works__href-button
-          +icon('link', 'green_mod')
+          +icon('link', 'arrow_mod')
           .works__href-button-text Посмотреть сайт
       .works__slider
         .works__item-main
@@ -36,7 +36,7 @@ block content
           .review__decor "
           p.review__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
           .reviewer
-            img.reviewer__img
+            img.reviewer__img(src = "assets/images/im/Dmitriy.png")
             .reviewer__descr
               .reviewer__name Ковальчук Дмитрий
               .reviewer__position основатель Loftschool
@@ -44,7 +44,7 @@ block content
           .review__decor "
           p.review__text Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
           .reviewer
-            img.reviewer__img
+            img.reviewer__img(src = "assets/images/im/Vladimir.jpg")
             .reviewer__descr
               .reviewer__name Сабанцев Владимир
               .reviewer__position преподаватель
@@ -62,4 +62,6 @@ block content
             .form__buttons
               button.enter__msg.but Отправить
               button.delete__msg.but Очистить
+      a.arrow__back
+        +icon('portf-arrow-up', 'white_mod')
   include ../common/footer

@@ -43,7 +43,58 @@
   }
 
   &__href {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
 
+    &-title {
+      font-family: "BERNIER Regular";
+      text-align: center;
+      width: pxRem(280px);
+      color: #373e42;
+      font-size: pxRem(35px);
+      margin-bottom: pxRem(40px);
+    }
+
+    &-skills {
+      width: pxRem(415px);
+      border-top: solid;
+      border-bottom: solid;
+      border-color: #acd6ce;
+      border-width: thin;
+      font-family: "Roboto Medium";
+      font-size: pxRem(16px);
+      color: #20b5a1;
+      text-align: center;
+      text-transform: uppercase;
+      padding: pxRem(20px);
+      margin-bottom: pxRem(40px);
+    }
+
+    &-button {
+      width: pxRem(200px);
+      display: flex;
+      padding: pxRem(15px);
+      color: white;
+      background: #00bfa5;
+      align-items: center;
+      justify-content: space-around;
+      border-radius: 5px;
+
+      .icon-link {
+        width: pxRem(25px);
+        height: pxRem(25px);
+      }
+
+      &:hover {
+        background: #268b8a;
+      }
+
+      &-text {
+        font-family: "Roboto Medium";
+      }
+    }
   }
 
   &__slider {
@@ -99,30 +150,58 @@
   min-height: 980px;
 }
 
+.review-item {
+  padding: pxRem(10px);
+  font-family: "Roboto Regular";
+  font-size: pxRem(16px);
+  color: #68777e;
+}
+
 .review__decor {
   font-size: pxRem(36px);
   font-family: "FontAwesome Regular";
+}
+
+.reviewer {
+  display: flex;
+  align-items: center;
+}
+
+.reviewer__img {
+  width: pxRem(80px);
+  height: pxRem(80px);
+  border-radius: 50%;
 }
 
 .reviews__list {
   display: flex;
   justify-content: space-between;
   width: pxRem(810px);
+  margin-bottom: pxRem(70px);
+}
+
+.reviewer__descr {
+  color: #20b5a1;
+}
+
+.reviewer__name {
+  font-weight: bold;
 }
 
 .callback__form {
   width: pxRem(380px);
   height: pxRem(435px);
+  margin-bottom: pxRem(70px);
   position: relative;
 
   .callback__bg {
-    background-color: white;
+    background-color: black;
     opacity: 0.33;
     position: absolute;
     z-index: 1;
     width: 100%;
     height: 100%;
-    border-radius: 1%;
+    border-radius: 5px;
     filter: blur(10px);
     -webkit-filter: blur(5px);
      -moz-filter: blur(5px);
@@ -151,6 +230,32 @@
     display: flex;
     flex-flow: column;
     align-items: center;
+
+    .user__name {
+      font-family: "Roboto Regular";
+      width: pxRem(300px);
+      height: pxRem(10px);
+      border-radius: 3px;
+      margin-bottom: pxRem(20px);
+      padding: pxRem(17px) pxRem(20px) pxRem(20px) pxRem(17px);
+    }
+
+    .user__email {
+      font-family: "Roboto Regular";
+      width: pxRem(300px);
+      height: pxRem(10px);
+      border-radius: 3px;
+      margin-bottom: pxRem(20px);
+      padding: pxRem(17px) pxRem(20px) pxRem(20px) pxRem(17px);
+    }
+
+    .user__msg {
+      font-family: "Roboto Regular";
+      width: pxRem(300px);
+      height: pxRem(100px);
+      border-radius: 3px;
+      padding: pxRem(20px);
+    }
   }
 
   .form__buttons {
@@ -163,6 +268,9 @@
     .but {
       height: 100%;
       background: #268b8b;
+      color: white;
+      font-family: "Roboto Regular";
+      font-size: pxRem(16px);
 
       &:hover {
         background: #26bbaa;
@@ -173,13 +281,13 @@
       flex: 1;
       border-right: solid;
       border-color: #82b7b9;
-      border-radius: 0 0 0 5%;
+      border-radius: 0 0 0 5px;
 
     }
 
     .delete__msg {
       flex: 1;
-      border-radius: 0 0 5% 0;
+      border-radius: 0 0 5px 0;
     }
   }
 }

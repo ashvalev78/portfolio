@@ -1,0 +1,33 @@
+.blog {
+  position: relative;
+
+  .blog__content {
+    padding-left: pxRem(125px);
+    padding-right: pxRem(310px);
+    position: relative;
+
+    display: flex;
+  }
+
+  &__header {
+    fill: white;
+    width: 100%;
+  }
+
+  &__bg {
+    background: url('../images/icons/bg-white.svg') no-repeat;
+    background-size: cover;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    top: - pxRem(128px);
+  }
+
+  &__menu {
+    margin-right: pxRem(120px);
+  }
+
+  &__content {
+    width: pxRem(980px);
+  }
+}
