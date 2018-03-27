@@ -1,17 +1,13 @@
 .blog {
   position: relative;
 
-  .blog__content {
+  &__content-main {
     padding-left: pxRem(125px);
-    padding-right: pxRem(310px);
+    padding-right: pxRem(410px);
+    height: pxRem(1267px);
     position: relative;
 
     display: flex;
-  }
-
-  &__header {
-    fill: white;
-    width: 100%;
   }
 
   &__bg {
@@ -20,14 +16,43 @@
     width: 100%;
     position: absolute;
     z-index: 2;
-    top: - pxRem(128px);
+    top: - pxRem(150px);
   }
 
   &__menu {
+    margin-top: pxRem(25px);
     margin-right: pxRem(120px);
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end;
+
+    &-item {
+      text-align: right;
+      font-family: "Roboto Regular";
+      color: #455a64;
+      margin-bottom: pxRem(35px);
+    }
   }
 
   &__content {
-    width: pxRem(980px);
+    width: pxRem(1000px);
+    height: pxRem(1070px);
+    overflow: scroll;
+    overflow-x: hidden;
+
+    &-article {
+      color: #455a64;
+      font-family: "Roboto Regular";
+    }
+  }
+
+  .article__name {
+    font-family: "BERNIER Regular";
+    font-size: pxRem(35px);
+  }
+
+  .article__date {
+    color: #c5ebe4;
+    margin-bottom: pxRem(30px);
   }
 }

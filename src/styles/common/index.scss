@@ -20,6 +20,10 @@
   }
 }
 
+.socials {
+  margin-bottom: pxRem(40px);
+}
+
 .socials__item {
   margin-right: pxRem(25px);
 
@@ -67,6 +71,7 @@
   display: flex;
   flex-flow: column;
   align-items: center;
+  margin-bottom: pxRem(40px);
 }
 
 .hero__name {
@@ -109,12 +114,11 @@
 
 .menu__item {
   flex:1;
+  border-right: solid;
+  border-color: #82b7b9;
 
-  &:before {
-    content: "";
-    width: pxRem(2px);
-    background-color: white;
-    height: 100%;
+  &:last-child {
+    border-right: none;
   }
 }
 
@@ -124,6 +128,8 @@
   text-align: center;
   padding-top: pxRem(15px);
   padding-bottom: pxRem(15px);
+  color: white;
+  font-family: "Roboto Medium";
 
   &:hover {
     background-color: #078b84;

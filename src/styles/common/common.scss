@@ -29,3 +29,33 @@ a {
 body {
   position: relative;
 }
+
+.animated__title {
+  position: relative;
+
+  &::after, &::before {
+    content: "";
+    width: pxRem(25px);
+    height: pxRem(5px);
+    background-color: #cbccc8;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+  }
+
+  &::after {
+    right: - pxRem(50px);
+  }
+
+  &::before {
+    left: - pxRem(50px);
+  }
+
+  &:hover {
+    .animated__title {
+      &::after, &::before {
+        background-color: green;
+      }
+    }
+  }
+}

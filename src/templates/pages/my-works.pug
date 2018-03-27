@@ -7,7 +7,7 @@ block content
       svg()
     .works__title-bg
       +icon('works_header', 'grey_mod')
-      h1.works__title Мои работы
+      h1.works__title.animated__title Мои работы
     .works__portfolio
       .works__href
         .works__href-title Сайт школы онлайн образования
@@ -29,7 +29,7 @@ block content
   section.reviews__callback
     .works__title-bg
       +icon('about_header', 'grey_mod')
-      h1.works__title Что обо мне<br>говорят
+      h1.works__title.animated__title Что обо мне<br>говорят
     .people__reviews
       ul.reviews__list
         li.review-item
@@ -51,7 +51,7 @@ block content
       .callback__form
         .callback__bg
         .callback__wrapper
-          h1.callback__title Связаться со мной
+          h1.callback__title.animated__title.form__title Связаться со мной
           form.callback-form
             label.callback__name
               input.user__name(placeholder = 'Имя')

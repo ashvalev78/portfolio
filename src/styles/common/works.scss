@@ -19,7 +19,6 @@
     color: #373e42;
     font-size: pxRem(63px);
     text-align: center;
-    height: pxRem(155px);
     position: absolute;
 
     &-bg {
@@ -171,13 +170,14 @@
   width: pxRem(80px);
   height: pxRem(80px);
   border-radius: 50%;
+  margin-right: pxRem(20px);
 }
 
 .reviews__list {
   display: flex;
   justify-content: space-between;
   width: pxRem(810px);
-  margin-bottom: pxRem(70px);
+  margin-bottom: pxRem(60px);
 }
 
 .reviewer__descr {
@@ -186,6 +186,11 @@
 
 .reviewer__name {
   font-weight: bold;
+}
+
+.review__text {
+  margin-top: pxRem(25px);
+  margin-bottom: pxRem(20px);
 }
 
 .callback__form {
@@ -289,5 +294,15 @@
       flex: 1;
       border-radius: 0 0 5px 0;
     }
+  }
+}
+
+.form__title {
+  &::after {
+    right: pxRem(15px);
+  }
+
+  &::before {
+    left: pxRem(15px);
   }
 }

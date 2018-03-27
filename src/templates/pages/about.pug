@@ -9,16 +9,17 @@ block content
         use(xlink:href="assets/images/icons/bg-about.svg")
     .about__content
       .about__life
-        h1.about__title обо мне
+        .about__life-title
+          h1.about__title.animated__title.animated__big обо мне
         .about__descr
           .about__avatar
             img.avatar__about(src="assets/images/im/avatar.jpg")
           .about__description
-            h2.about__descr__title кто я
+            h2.about__descr__title.animated__title.about__animated кто я
             p.about__text Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца. Я совсем один и блаженствую в здешнем краю, словно созданном для таких, как я. Я так счастлив, мой друг, так упоен ощущением покоя.
             p.about__text.descr__end Душа моя озарена неземной радостью, как эти чудесные весенние утра, которыми я наслаждаюсь от всего сердца
       .about__skills
-        h2.skills__title Чем я могу быть<br>вам полезен
+        h2.skills__title.animated__title.about__animated Чем я могу быть<br>вам полезен
         p.skills__descr Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
         ul.skills__list
           li.skills__item Frontend
@@ -49,7 +50,7 @@ block content
                 +skill('bower', 10)
     section.about__map
       .contacts
-        h2.contacts__title Контакты
+        h2.contacts__title.animated__title Контакты
         ul.contacts__list
           li.contacts__item
             a.contacts__href

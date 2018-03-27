@@ -41,10 +41,33 @@
   margin-top: pxRem(100px);
   display: flex;
   justify-content: center;
+  text-align: center;
+  align-items: center;
   text-transform: uppercase;
   font-size: pxRem(63px);
   font-family: "BERNIER Regular";
   color: #373e42;
+}
+
+.animated__big {
+  &::before {
+    left: 10%;
+  }
+
+  &::after {
+    right: 10%;
+  }
+}
+
+.about__animated {
+
+  &::before {
+    left: 20%;
+  }
+
+  &::after {
+    right: 20%;
+  }
 }
 
 .about__descr__title {
@@ -84,7 +107,7 @@
   display: flex;
   justify-content: center;
   text-transform: uppercase;
-  text-align: justify;
+  text-align: center;
 }
 
 .skills__list {
