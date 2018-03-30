@@ -149,7 +149,7 @@ function images() {
 
 function fonts() {
   return gulp.src('src/fonts/**/*.*')
-    .pipe(gulp.dest('build/fonts'));
+    .pipe(gulp.dest('build/assets/fonts'));
 }
 
 exports.templates = templates;
