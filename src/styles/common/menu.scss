@@ -13,7 +13,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  height: pxRem(620px);
+  min-height: pxRem(750px);
 }
 
 .white_mod {
@@ -71,7 +71,7 @@
 
 .arrow__down-href {
   position: absolute;
-  top: pxRem(415px);
+  bottom: pxRem(90px);
 }
 
 .arrow__dow-img {
