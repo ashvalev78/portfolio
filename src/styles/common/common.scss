@@ -1,6 +1,7 @@
 * {
   -webkit-padding-start: 0px;
   font-size: pxRem(16px);
+  box-sizing: border-box;
 }
 
 input, textarea, button {
@@ -14,8 +15,8 @@ p {
 }
 
 ul {
-  -webkit-margin-before: 0;
-  -webkit-margin-after: 0;
+  margin: 0;
+  padding: 0;
 }
 
 li {

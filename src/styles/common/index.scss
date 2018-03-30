@@ -61,6 +61,7 @@
 }
 
 .avatar {
+  margin-top: pxRem(40px);
   opacity: 1;
   height: pxRem(140px);
   width: pxRem(140px);
@@ -88,6 +89,7 @@
 
 .hero__name.welcome {
   color: #455a64;
+  font-size: pxRem(28px);
 }
 
 .hero__text.welcome {
@@ -113,9 +115,16 @@
 }
 
 .menu__item {
-  flex:1;
-  border-right: solid;
-  border-color: #82b7b9;
+  border-right: solid #82b7b9;
+  display: flex;
+
+  &:first-of-type {
+    border-radius: 0 0 0 pxRem(5px);
+  }
+
+  &:last-of-type {
+    border-radius: 0 0 pxRem(5px) 0;
+  }
 
   &:last-child {
     border-right: none;
@@ -126,10 +135,12 @@
   width: 100%;
   background-color: #07ac98;
   text-align: center;
-  padding-top: pxRem(15px);
-  padding-bottom: pxRem(15px);
   color: white;
-  font-family: "Roboto Medium";
+  font-family: "Roboto Regular";
+  font-size: pxRem(16px);
+  padding: pxRem(15px) pxRem(31px);
+  border-radius: inherit;
+  white-space: nowrap;
 
   &:hover {
     background-color: #078b84;

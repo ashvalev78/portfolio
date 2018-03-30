@@ -89,3 +89,9 @@
   width: pxRem(42px);
   height: pxRem(42px);
 }
+
+.header__footer {
+  overflow: hidden;
+  position: absolute;
+  bottom: -3%;
+}

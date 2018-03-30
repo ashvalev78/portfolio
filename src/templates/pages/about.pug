@@ -1,12 +1,13 @@
 extends ../template
 include ../common/mixins
+include ../common/menu
 
 block content
-  include ../common/menu
+  +header('#EEEBDF', '#EFEEE9')
   section.about
-    .about__bg
-      svg()
-        use(xlink:href="assets/images/icons/bg-about.svg")
+    //- .about__bg
+    //-   svg()
+    //-     use(xlink:href="assets/images/icons/bg-about.svg")
     .about__content
       .about__life
         .about__life-title
