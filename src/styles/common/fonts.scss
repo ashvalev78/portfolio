@@ -1,37 +1,37 @@
 @font-face {
-    font-family: Roboto Bold;
-    src: url("../fonts/Roboto/Roboto-Bold.ttf") format("ttf");
+    font-family: 'Roboto Bold';
+    src: url("../fonts/Roboto/Roboto-Bold.ttf") format("truetype");
     font-weight: 700;
 }
 
 @font-face {
-    font-family: Roboto Light;
-    src: url("../fonts/Roboto/Roboto-Light.ttf") format("ttf");
+    font-family: 'Roboto Light';
+    src: url("../fonts/Roboto/Roboto-Light.ttf") format("truetype");
     font-weight: 300;
 }
 
 @font-face {
-    font-family: Roboto Regular;
-    src: url("../fonts/Roboto/Roboto-Regular.ttf") format("ttf");
+    font-family: 'Roboto Regular';
+    src: url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype");
     font-weight: 400;
 }
 
 @font-face {
-    font-family: Roboto Medium;
-    src: url("../fonts/Roboto/Roboto-Medium.ttf") format("ttf");
+    font-family: 'Roboto Medium';
+    src: url("../fonts/Roboto/Roboto-Medium.ttf") format("truetype");
     font-weight: 500;
 }
 
 @font-face {
-    font-family: Roboto Italic;
-    src: url("../fonts/Roboto/Roboto-Italic.ttf") format("ttf");
+    font-family: 'Roboto Italic';
+    src: url("../fonts/Roboto/Roboto-Italic.ttf") format("truetype");
     font-weight: 400;
     font-style: italic;
 }
 
 @font-face {
-    font-family: BERNIER Distressed;
-    src: url('../fonts/Bernier/BERNIERDistressed-Regular.otf') format('otf');
+    font-family: 'BERNIER Distressed';
+    src: url('../fonts/Bernier/BERNIERDistressed-Regular.otf') format('opentype');
     font-weight: 300;
     font-style: normal;
 }
@@ -40,8 +40,8 @@
 
 
 @font-face {
-    font-family: BERNIER Regular;
-    src: url('../fonts/Bernier/BERNIERRegular-Regular.otf') format('otf');
+    font-family: 'BERNIER Regular';
+    src: url('../fonts/Bernier/BERNIERRegular-Regular.otf') format('opentype');
     font-weight: 400;
     font-style: normal;
 }
@@ -50,16 +50,16 @@
 
 
 @font-face {
-    font-family: BERNIER Shade;
-    src: url('../fonts/Bernier/BERNIERShade-Regular.otf') format('otf');
+    font-family: 'BERNIER Shade';
+    src: url('../fonts/Bernier/BERNIERShade-Regular.otf') format('opentype');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
-    font-family: FontAwesome;
-    src: url('../fonts/fontawesome/fontawesome-webfont.ttf') format('ttf'),
-         url('../fonts/fontawesome/FontAwesome.otf') format('otf');
+    font-family: 'FontAwesome';
+    src: url('../fonts/fontawesome/fontawesome-webfont.ttf') format('truetype'),
+         url('../fonts/fontawesome/FontAwesome.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
