@@ -1,10 +1,9 @@
 extends ../template
+include ../common/menu
 
 block content
-  include ../common/menu
+  +header('#faf8f0', '#faf8f0')
   section.works
-    .works__bg
-      svg()
     .works__title-bg
       +icon('works_header', 'grey_mod')
       h1.works__title.animated__title Мои работы

@@ -1,10 +1,10 @@
 extends ../template
-
+include ../common/menu
 block variables
   - var title = 'Блог'
   - var articles = ['Самое важное в SASS', 'Приёмы в верстке', 'Самый необходимый набор плагинов', 'Почему я выбрал Pug (потому что мопсы милые)']
 block content
-  include ../common/blog-menu
+  +blog-header("white")
   section.blog
     .blog__bg
       svg()
