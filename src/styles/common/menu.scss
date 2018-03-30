@@ -13,7 +13,7 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  min-height: pxRem(750px);
+  min-height: pxRem(980px);
 }
 
 .white_mod {
@@ -42,7 +42,9 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: pxRem(150px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .hero__descr {
@@ -71,7 +73,8 @@
 
 .arrow__down-href {
   position: absolute;
-  bottom: pxRem(90px);
+  bottom: 20%;
+  z-index: 20;
 }
 
 .arrow__dow-img {
@@ -93,11 +96,19 @@
 .header__footer {
   overflow: hidden;
   position: absolute;
-  bottom: -3%;
+  bottom: - pxRem(40px);
   width: 100%;
+  z-index: 1;
+
+  &-blog {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    bottom: -2%;
+  }
 
   &-svg {
-    overflow: hidden;
     width: 100%;
   }
 }

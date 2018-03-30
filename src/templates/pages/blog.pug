@@ -4,10 +4,8 @@ block variables
   - var title = 'Блог'
   - var articles = ['Самое важное в SASS', 'Приёмы в верстке', 'Самый необходимый набор плагинов', 'Почему я выбрал Pug (потому что мопсы милые)']
 block content
-  +blog-header("white")
+  +blog-header("#FFFFFF")
   section.blog
-    .blog__bg
-      svg()
     .blog__content-main
       ul.blog__menu
         each item in articles
