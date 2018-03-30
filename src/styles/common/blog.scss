@@ -8,6 +8,11 @@
     position: relative;
 
     display: flex;
+
+    @include small-cont {
+      padding-right: pxRem(110px);
+      padding-left: pxRem(50px);
+    }
   }
 
   &__bg {
@@ -25,6 +30,10 @@
     display: flex;
     flex-flow: column;
     align-items: flex-end;
+
+    @include small-cont {
+      margin-right: pxRem(100px);
+    }
 
     &-item {
       text-align: right;
