@@ -147,6 +147,11 @@ function images() {
         .pipe(gulp.dest(paths.images.dest));
 }
 
+function fonts() {
+  return gulp.src('src/fonts/**/*.*')
+    .pipe(gulp.dest('build/fonts'));
+}
+
 exports.templates = templates;
 exports.styles = styles;
 exports.clean = clean;
@@ -166,6 +171,6 @@ function watch() {
 // default task
 gulp.task('default', gulp.series(
     clean,
-    gulp.parallel("svg", templates, images, scripts, styles),
+    gulp.parallel("svg", templates, images, scripts, styles, fonts),
     gulp.parallel(watch, server)
 ));
