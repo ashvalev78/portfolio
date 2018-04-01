@@ -33,7 +33,6 @@
 }
 
 .hero__auth {
-  align-self: flex-end;
   padding: pxRem(15px) pxRem(30px);
   border-color: white;
   border-radius: 5%;
@@ -42,11 +41,14 @@
   color: white;
   font-family: 'Roboto Light';
   font-size: pxRem(16px);
-  margin-right: pxRem(100px);
-  margin-top: pxRem(20px);
   position: absolute;
-  top:0;
-  right:0;
+  top: pxRem(20px);
+  right: pxRem(100px);
+
+  @include phones {
+    right: 50%;
+    transform: translate(50%, 0);
+  }
 }
 
 .hero__presentation {

@@ -23,6 +23,10 @@
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
   }
+
+  @include phones {
+    grid-template-rows: 0.5fr 1fr;
+  }
 }
 
 .about__avatar {
@@ -79,6 +83,11 @@
   @include tablets {
     margin-right: pxRem(148px);
     margin-left: pxRem(148px);
+  }
+
+  @include phones {
+    margin-right: pxRem(4px);
+    margin-left: pxRem(4px);
   }
 }
 
@@ -152,6 +161,11 @@
     margin-left: pxRem(148px);
     padding: 0;
   }
+
+  @include phones {
+    margin-right: pxRem(4px);
+    margin-left: pxRem(4px);
+  }
 }
 
 .skills__item {
@@ -166,18 +180,43 @@
 }
 
 .skills__item__list {
-  margin-top: pxRem(20px);
+  margin-bottom: pxRem(20px);
   display: flex;
   justify-content: space-between;
 
+  @include phones {
+    margin-top: pxRem(10px);
+    margin-right: pxRem(28px);
+    margin-left: pxRem(28px);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+}
+
+.item__list-item {
+  margin-right: pxRem(15px);
+  margin-left: pxRem(15px);
+
+  @include phones {
+    margin-bottom: pxRem(30px);
+  }
 }
 
 .front, .ws {
   width: pxRem(400px);
+
+  @include tablets {
+    width: auto;
+  }
 }
 
 .back {
   width: pxRem(550px);
+
+  @include tablets {
+    width: auto;
+  }
 }
 
 .about__map {
@@ -188,6 +227,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @include phones {
+    align-items: flex-start;
+  }
 }
 
 .contacts {
@@ -199,6 +242,11 @@
   flex-flow: column;
   justify-content: center;
   padding: pxRem(38px);
+
+  @include phones {
+    width: 100%;
+    height: pxRem(270px);
+  }
 }
 
 .icon_mod {
@@ -234,6 +282,10 @@
 .about__header-footer {
   @include tablets {
     bottom: - pxRem(120px);
+  }
+
+  @include phones {
+    bottom: - pxRem(170px);
   }
 }
 
