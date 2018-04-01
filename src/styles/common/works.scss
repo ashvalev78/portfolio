@@ -38,7 +38,22 @@
     width: 100%;
     height: pxRem(750px);
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 0.5fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    grid-template-areas:
+    "href href main main"
+    "href href left right";
+
+
+    @include tablets {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1.5fr 1.25fr 1fr;
+      grid-template-areas:
+      "main main"
+      "href href"
+      "left right";
+    }
   }
 
   &__href {
@@ -46,6 +61,7 @@
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    grid-area: href;
 
     &-title {
       font-family: "BERNIER Regular";
@@ -54,6 +70,10 @@
       color: #373e42;
       font-size: pxRem(35px);
       margin-bottom: pxRem(40px);
+
+      @include tablets {
+        margin-top: pxRem(40px);
+      }
     }
 
     &-skills {
@@ -69,6 +89,10 @@
       text-transform: uppercase;
       padding: pxRem(20px);
       margin-bottom: pxRem(40px);
+
+      @include phones {
+        width: auto;
+      }
     }
 
     &-button {
@@ -80,6 +104,10 @@
       align-items: center;
       justify-content: space-around;
       border-radius: 5px;
+
+      @include tablets {
+        margin-bottom: pxRem(60px);
+      }
 
       .icon-link {
         width: pxRem(25px);
@@ -96,25 +124,24 @@
     }
   }
 
-  &__slider {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      "main main";
+  &__item-main {
+    display: flex;
+    grid-area: main;
     background-color: #efebe0;
   }
 
-  &__item-main {
-    grid-area: main;
-  }
-
   &__item-left {
+    display: flex;
+    grid-area: left;
     position: relative;
+    background-color: #efebe0;
   }
 
   &__item-right {
+    display: flex;
+    grid-area: right;
     position: relative;
+    background-color: #efebe0;
   }
 }
 
@@ -135,10 +162,18 @@
   fill: #f0eee7;
   width: pxRem(495px);
   height: pxRem(145px);
+
+  @include phones {
+    width: auto;
+  }
 }
 
 .reviews__callback {
   background-color: #fbfcfd;
+
+  @include phones {
+    min-height: 1300px;
+  }
 }
 
 .people__reviews {
@@ -178,6 +213,11 @@
   justify-content: space-between;
   width: pxRem(810px);
   margin-bottom: pxRem(60px);
+
+  @include phones {
+    flex-direction: column;
+    width: auto;
+  }
 }
 
 .reviewer__descr {
@@ -304,5 +344,15 @@
 
   &::before {
     left: pxRem(15px);
+  }
+}
+
+.works__header-footer {
+  @include tablets {
+    bottom: - pxRem(120px);
+  }
+
+  @include phones {
+    bottom: - pxRem(170px);
   }
 }

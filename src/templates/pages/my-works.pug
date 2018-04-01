@@ -2,7 +2,7 @@ extends ../template
 include ../common/menu
 
 block content
-  +header('#faf8f0', '#faf8f0')
+  +header('#faf8f0', '#faf8f0', 'works__header-footer')
   section.works
     .works__title-bg
       +icon('works_header', 'grey_mod')
@@ -14,17 +14,16 @@ block content
         a.works__href-button
           +icon('link', 'arrow_mod')
           .works__href-button-text Посмотреть сайт
-      .works__slider
-        .works__item-main
-          img.works__item-img
-        .works__item-left
-          img.works__item-img
-          a.portf-arrow
-            +icon("portf-arrow-down", 'arrow_mod')
-        .works__item-right
-          img.works__item-img
-          a.portf-arrow
-            +icon("portf-arrow-up", 'arrow_mod')
+      .works__item-main
+        img.works__item-img
+      .works__item-left
+        img.works__item-img
+        a.portf-arrow
+          +icon("portf-arrow-down", 'arrow_mod')
+      .works__item-right
+        img.works__item-img
+        a.portf-arrow
+          +icon("portf-arrow-up", 'arrow_mod')
   section.reviews__callback
     .works__title-bg
       +icon('about_header', 'grey_mod')
