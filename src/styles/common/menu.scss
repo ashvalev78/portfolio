@@ -106,6 +106,19 @@
     width: 100%;
     z-index: 1;
     bottom: -2%;
+
+    @include small-cont {
+      bottom: - pxRem(70px);
+    }
+
+    @include tablets {
+      bottom: - pxRem(160px);
+    }
+
+    @include phones {
+      bottom: - pxRem(200px);
+    }
+    
   }
 
   &-svg {

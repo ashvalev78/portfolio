@@ -1,8 +1,4 @@
 Швалев Александр Сергеевич
 
-Добавил:
-linting js (eslint),
-babel.
-
-Планируется добавить:
-спрайты
+Ссылка на проект:
+    https://ashvalev78.github.io/portfolio/build/

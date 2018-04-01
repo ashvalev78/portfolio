@@ -2,10 +2,18 @@
 
   .socials__header {
     left: pxRem(310px);
+
+    @include small-cont {
+      left: pxRem(10px);
+    }
   }
 
   .hero__hamburger {
     right: pxRem(310px);
+
+    @include small-cont {
+      right: pxRem(10px);
+    }
   }
 
   .hero__name-menu {
@@ -17,5 +25,15 @@
   .hero__text-menu {
     color: white;
     font-family: "Roboto Light";
+    white-space: nowrap;
+  }
+}
+
+
+.blog-arrow {
+  display: none;
+
+  @include tablets {
+    display: block;
   }
 }

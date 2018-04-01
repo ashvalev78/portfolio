@@ -3,17 +3,12 @@
 
   &__content-main {
     padding-top: pxRem(50px);
-    padding-left: pxRem(125px);
-    padding-right: pxRem(410px);
     height: pxRem(1267px);
     position: relative;
 
     display: flex;
 
-    @include small-cont {
-      padding-right: pxRem(110px);
-      padding-left: pxRem(50px);
-    }
+    justify-content: center;
   }
 
   &__bg {
@@ -26,29 +21,58 @@
   }
 
   &__menu {
+    padding-left: pxRem(125px);
     margin-top: pxRem(25px);
-    margin-right: pxRem(120px);
     display: flex;
     flex-flow: column;
     align-items: flex-end;
 
     @include small-cont {
-      margin-right: pxRem(100px);
+      padding-left: pxRem(45px);
+    }
+
+    @include tablets {
+      display: none;
     }
 
     &-item {
-      text-align: right;
-      font-family: "Roboto Regular";
-      color: #455a64;
       margin-bottom: pxRem(35px);
+
+      &-href {
+        text-align: right;
+        font-family: "Roboto Regular";
+        color: #455a64;
+        padding-right: pxRem(20px);
+      }
+
+      &:hover {
+        border-right: pxRem(3px) solid #0ab19e;
+        transition: border-right .2s;
+        .blog__menu-item-href {
+          color: #0ab19e;
+        }
+      }
     }
   }
 
   &__content {
     width: pxRem(1000px);
     height: pxRem(1070px);
+    padding-left: pxRem(80px);
+    margin-right: pxRem(210px);
     overflow: scroll;
     overflow-x: hidden;
+
+    @include small-cont {
+      margin-right: pxRem(90px);
+    }
+
+    @include tablets {
+      padding: 0;
+      margin-right: pxRem(24px);
+      margin-left: pxRem(24px);
+      height: pxRem(940px);
+    }
 
     &-article {
       color: #455a64;
@@ -64,5 +88,50 @@
   .article__date {
     color: #c5ebe4;
     margin-bottom: pxRem(30px);
+  }
+}
+
+// Во время анимации на js просто менять позицию кнопки вместе с выездом менюхи, пока она не станет ширина менюхи + кнопки.
+
+.phones__menu-button {
+  background-color: #00bfa5;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 100;
+  width: pxRem(8px);
+  height: pxRem(40px);
+  border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+}
+
+.blog__menu-phones {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: pxRem(284px);
+  transform: translateX(-100%);
+  background-color: #00bfa5;
+  z-index: 100;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+
+  &-item {
+    margin-bottom: pxRem(35px);
+    margin-right: pxRem(12px);
+    margin-left: pxRem(12px);
+    text-align: right;
+
+    &-href {
+      color: #b9e7de;
+      font-size: pxRem(16px);
+      font-family: "Roboto Regular";
+
+      &:hover {
+        color: white;
+        font-family: "Roboto Medium";
+      }
+    }
   }
 }
