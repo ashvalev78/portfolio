@@ -18,6 +18,11 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows:  1fr;
   top: 40%;
+
+  @include tablets {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
 }
 
 .about__avatar {
@@ -70,6 +75,13 @@
   }
 }
 
+.about__description {
+  @include tablets {
+    margin-right: pxRem(148px);
+    margin-left: pxRem(148px);
+  }
+}
+
 .about__descr__title {
   color: #455a64;
   font-size: pxRem(35px);
@@ -85,6 +97,11 @@
   color: #455a64;
   font-family: "Roboto Regular";
   font-size: pxRem(16px);
+  margin-bottom: pxRem(20px);
+
+  @include tablets {
+    padding: 0;
+  }
 }
 
 .descr__end {
@@ -97,6 +114,10 @@
   grid-template-rows: pxRem(230px) 0.25fr 2fr;
   padding-left: pxRem(40px);
   padding-right: pxRem(10px);
+
+  @include tablets {
+    padding: 0;
+  }
 }
 
 .skills__title {
@@ -112,6 +133,12 @@
 
 .skills__list {
   margin-bottom: pxRem(70px);
+
+  @include tablets {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .skills__descr {
@@ -119,6 +146,12 @@
   font-family: "Roboto Regular";
   font-size: pxRem(16px);
   padding-right: pxRem(70px);
+
+  @include tablets {
+    margin-right: pxRem(148px);
+    margin-left: pxRem(148px);
+    padding: 0;
+  }
 }
 
 .skills__item {
@@ -126,6 +159,10 @@
   font-family: "Roboto Medium";
   margin-top: pxRem(40px);
   color: #455a64;
+  
+  @include tablets {
+    text-align: center;
+  }
 }
 
 .skills__item__list {
@@ -192,4 +229,17 @@
   font-family: "Roboto Medium";
   font-size: pxRem(16px);
   color: #708288;
+}
+
+.about__header-footer {
+  @include tablets {
+    bottom: - pxRem(120px);
+  }
+}
+
+.about__header-footer-svg {
+
+  @include tablets {
+    fill: #efeee9;
+  }
 }
