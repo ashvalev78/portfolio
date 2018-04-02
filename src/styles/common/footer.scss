@@ -38,6 +38,10 @@
   font-family: "Roboto Medium";
   color: white;
 
+  &:hover {
+    color: #20c6af;
+  }
+
   @include phones {
     margin-right: pxRem(8px);
   }

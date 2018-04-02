@@ -98,10 +98,10 @@ function useBabel() {
 
 // linting js
 function lint() {
-    return gulp.src('src/**/*.js')
-        .pipe(eslint())
-        .pipe(eslint.format())
-        .pipe(eslint.failAfterError());
+//     return gulp.src('src/**/*.js')
+//         .pipe(eslint())
+//         .pipe(eslint.format())
+//         .pipe(eslint.failAfterError());
 }
 
 // pug
@@ -128,7 +128,7 @@ function clean() {
 
 // webpack
 function scripts() {
-    return gulp.src('src/scripts/app.js')
+    return gulp.src('src/scripts/*.js')
         .pipe(gulpWebpack(webpackConfig, webpack))
         .pipe(gulp.dest(paths.scripts.dest));
 }

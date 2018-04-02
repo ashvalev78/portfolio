@@ -125,3 +125,24 @@
     width: 100%;
   }
 }
+
+
+.header__main-menu {
+  background-color: rgba(32, 198, 175, 0.35);
+  position: absolute;
+  z-index: 1000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  display: none;
+
+  &-href {
+    position: absolute;
+    margin-bottom: pxRem(50px);
+    color: white;
+  }
+}

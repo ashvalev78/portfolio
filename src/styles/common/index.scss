@@ -1,6 +1,7 @@
 .welcome__section {
   background: url("../images/im/mountains.jpg") center center no-repeat;
   background-size: cover;
+  background-color: #bccbc6;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -152,4 +153,31 @@
 
 .auth__welcome {
   display: none;
+}
+
+.welcome__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+
+  .parallax__layer {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+    transform: translate3d(0, 0, 0);
+
+    .parallax__image {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
 }
