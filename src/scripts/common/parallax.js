@@ -1,4 +1,4 @@
-export default function parallax() {
+function parallax() {
 
     const parallaxSection = document.getElementById('parallax-section');
     const layers = parallaxSection.children;
@@ -9,9 +9,9 @@ export default function parallax() {
 
         Array.from(layers).forEach((layer, i) => {
             const speed = i/100;
-            const bottomPos = window.innerHeight / 2 * k;
-            const posX = initialX * k;
-            const posY = initialY * k;
+            const bottomPos = window.innerHeight / 2 * speed;
+            const posX = initialX * speed;
+            const posY = initialY * speed;
 
             layer.style.transform = `translate3d(${posX}px, ${posY}px, 0)`;
             layer.style.bottom = `-${bottomPos}px`;
@@ -20,3 +20,5 @@ export default function parallax() {
 
     window.addEventListener('mousemove', move);
 }
+
+window.onload = start;

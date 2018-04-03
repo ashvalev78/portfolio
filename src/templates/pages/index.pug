@@ -6,43 +6,56 @@ block content
   section.welcome__section
     .welcome__bg(id = 'parallax-section')
       .parallax__layer
-        img.parallax__image(src="assets/images/im/Layer1.jpg" data-speed = '1')
+        img.parallax__image(src="assets/images/im/Layer 9.png")
       .parallax__layer
-        img.parallax__image(src="assets/images/im/Layer2.jpg" data-speed = '2')
+        img.parallax__image(src="assets/images/im/Layer 8.png")
       .parallax__layer
-        img.parallax__image(src="assets/images/im/Layer 4.png" data-speed = '3')
-      //- .parallax__layer
-      //-   img.parallax__image(src="assets/images/im/Layer4.png")
+        img.parallax__image(src="assets/images/im/Layer 7.png")
       .parallax__layer
-        img.parallax__image(src="assets/images/im/Layer 5.png" data-speed = '4')
+        img.parallax__image(src="assets/images/im/Layer 6.png")
       .parallax__layer
-        img.parallax__image(src="assets/images/im/Layer 6.png" data-speed = '5')
+        img.parallax__image(src="assets/images/im/Layer 4.png")
       .parallax__layer
-        img.parallax__image(src="assets/images/im/Layer 7.png" data-speed = '6')
+        img.parallax__image(src="assets/images/im/Layer 2.png")
       .parallax__layer
-        img.parallax__image(src="assets/images/im/Layer 8.png" data-speed = '7')
-      .parallax__layer
-        img.parallax__image(src="assets/images/im/Layer 9.png" data-speed = '8' z-index = "9")
-      //- .parallax__layer
-      //-   img.parallax__image(src="assets/images/im/Layer4.png")
+        img.parallax__image(src="assets/images/im/Layer 1.png")
     a.hero__auth(href="") Авторизация
     .hero__description
-      .hero__presentation
-        .hero__img
-          img.avatar(src = "assets/images/im/avatar.jpg")
-        .hero__descr
-          .hero__name.welcome Александр Швалев
-          .hero__text.welcome Личный сайт веб разработчика
-        ul.socials.description__socials
-          each item in ['vk', 'github', 'in']
-            li.socials__item
-              a(href="" class = 'href__socials')
-                +icon(`${item}`, "green_mod")
-        .hero__menu
-          ul.menu
-            li.menu__item
-              a.menu__item-href(href="./my-works.html") Мои работы
-            li.menu__item 
-              a.menu__item-href(href="./about.html") Обо мне
-            li.menu__item 
-              a.menu__item-href(href="./blog.html") Блог
+      .hero__flipper.front__flipper
+        .hero__presentation
+          .hero__img
+            img.avatar(src = "assets/images/im/avatar.jpg")
+          .hero__descr
+            .hero__name.welcome Александр Швалев
+            .hero__text.welcome Личный сайт веб разработчика
+          ul.socials.description__socials
+            each item in ['vk', 'github', 'in']
+              li.socials__item
+                a(href="" class = 'href__socials')
+                  +icon(`${item}`, "green_mod")
+          .hero__menu
+            ul.menu
+              li.menu__item
+                a.menu__item-href(href="./my-works.html") Мои работы
+              li.menu__item 
+                a.menu__item-href(href="./about.html") Обо мне
+              li.menu__item 
+                a.menu__item-href(href="./blog.html") Блог
+        .hero__authorization
+          .hero__authorization-form
+            .auth__title Авторизация
+            .ul.auth__inputs
+              li.auth__input
+                .auth__input-img
+                input.auth__input-input(type="text")
+              li.auth__input
+                .auth__input-img
+                input.auth__input-input(type="text")
+            .auth__checks
+              .human__box
+                input.checkbox__elem(type="checkbox")
+            .auth__buttons
+              a.auth__back(href="")
+              a.auth__enter(href="")
+            
+

@@ -41,6 +41,9 @@ li {
 
 a {
   text-decoration: none;
+  &:hover {
+    transition: .5s;
+  }
 }
 
 body {

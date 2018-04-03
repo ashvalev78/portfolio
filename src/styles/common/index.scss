@@ -46,15 +46,40 @@
   top: pxRem(20px);
   right: pxRem(100px);
 
+  &:hover {
+    background-color: white;
+    color: #20c6af;
+  }
+
   @include phones {
     right: 50%;
     transform: translate(50%, 0);
   }
 }
 
-.hero__presentation {
+.hero__description {
+  position: relative;
+  width: pxRem(380px);
+  border-radius: 1%;
+  height: pxRem(395px);
+  transform-style: preserve-3d;
+  perspective: 1000;
+}
+
+.hero__flipper {
+  position: absolute;
+  top:0;
+  left: 0;
   background-color: rgba(252, 252, 252, 0.8);
   opacity: 0.8;
+  width: 100%;
+  height: 100%;
+  border-radius: 1%;
+  transform-style: preserve-3d;
+}
+
+.hero__presentation {
+  position: absolute;
   width: pxRem(380px);
   display: flex;
   flex-flow: column;
@@ -62,6 +87,7 @@
   padding-top: pxRem(20px);
   border-radius: 1%;
   overflow: hidden;
+  backface-visibility: hidden;
 }
 
 .avatar {
@@ -156,6 +182,7 @@
 }
 
 .welcome__bg {
+  overflow: hidden;
   position: absolute;
   top: 0;
   left: 0;
@@ -165,8 +192,9 @@
 
   .parallax__layer {
     position: absolute;
+    left: -15%;
     height: 100%;
-    width: 100%;
+    width: 125%;
     bottom: 0;
     transform: translate3d(0, 0, 0);
 
@@ -180,4 +208,31 @@
       width: 100%;
     }
   }
+}
+
+.hero__authorization {
+  position: absolute;
+  transform: rotateY(-180deg);
+  backface-visibility: hidden;
+}
+
+.front__flipper, .back__flipper {
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: -webkit-transform .6s;
+  transition: transform .6s;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.front__flipper {
+  z-index: 2;
+}
+
+.back__flipper {
+  z-index: 1;
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
 }
