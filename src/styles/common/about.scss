@@ -222,18 +222,27 @@
 .about__map {
   height: 100vh;
   min-height: 980px;
-  background: url('../images/im/about-map.png');
+  // background: url('../images/im/about-map.png');
   background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 
   @include phones {
     align-items: flex-start;
   }
 }
 
+#map {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
 .contacts {
+  position: absolute;
   width: pxRem(380px);
   height: pxRem(290px);
   background-color: rgba(252, 252, 252, 0.8);

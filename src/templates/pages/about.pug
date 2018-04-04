@@ -47,6 +47,7 @@ block content
               li.item__list-item 
                 +skill('bower', 10)
     section.about__map
+      #map
       .contacts
         h2.contacts__title.animated__title Контакты
         ul.contacts__list
@@ -67,4 +68,6 @@ block content
               +icon('map_marker', 'icon_mod') 
               p.contacts__name place
 
-    include ../common/footer.pug      
+    include ../common/footer.pug
+  script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuDT-Uq5Fx4nO7BRp05m3dnoSf6R8oAgY&callback=initMap"
+    async defer)     
