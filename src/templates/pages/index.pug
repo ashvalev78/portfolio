@@ -21,7 +21,7 @@ block content
         img.parallax__image(src="assets/images/im/Layer 1.png")
     a.hero__auth(href="") Авторизация
     .hero__description
-      .hero__flipper.front__flipper
+      .hero__flipper.back__flipper
         .hero__presentation
           .hero__img
             img.avatar(src = "assets/images/im/avatar.jpg")
@@ -43,19 +43,35 @@ block content
                 a.menu__item-href(href="./blog.html") Блог
         .hero__authorization
           .hero__authorization-form
-            .auth__title Авторизация
-            .ul.auth__inputs
+            h2.auth__title Авторизация
+            .auth__inputs
               li.auth__input
                 .auth__input-img
-                input.auth__input-input(type="text")
+                  +icon('login', 'login_mod')
+                input.auth__input-input( placeholder="Логин" name ="log")
               li.auth__input
                 .auth__input-img
-                input.auth__input-input(type="text")
+                  +icon('password', 'login_mod')
+                input.auth__input-input( placeholder="Пароль" name="pass")
             .auth__checks
               .human__box
-                input.checkbox__elem(type="checkbox")
-            .auth__buttons
-              a.auth__back(href="")
-              a.auth__enter(href="")
+                input.checkbox__elem(type="checkbox" name='robot check')
+                .checkbox__elem-fake
+                .checkbox__descr Я человек
+              h2.auth__checks-check Вы точно не робот?
+              .auth__checks__second
+                .auth__checks__second-block
+                  input.auth__checks__second-check(type="radio" name='robot')
+                  .auth__checks__second-check-fake
+                  .check__text Да
+                .auth__checks__second-block.second-block
+                  input.auth__checks__second-check(type="radio" name='robot')
+                  .auth__checks__second-check-fake
+                  .check__text Не уверен
+            ul.back__menu
+              li.back__item
+                a.back__buttons.auth__back(href="") На главную
+              li.back__item
+                a.back__buttons(href="") Войти
             
 

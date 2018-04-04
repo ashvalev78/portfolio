@@ -2,6 +2,7 @@ function flip() {
     const authButton = document.querySelector('.hero__auth');
     const flipper = document.querySelector('.hero__flipper');
     const toMain = document.querySelector('.auth__back');
+    const heroDescr = document.querySelector('.hero__description');
 
     authButton.addEventListener('click', (e) => {
         e.preventDefault();
@@ -18,7 +19,7 @@ function flip() {
     });
 
     document.addEventListener('click', (e) => {
-        if (!flipper.contains(e.target)) {
+        if (!heroDescr.contains(e.target)) {
             if (!authButton.contains(e.target)) {
                 if (flipper.classList.contains('back__flipper')) {
                     flipper.classList.remove('back__flipper');
