@@ -1,7 +1,7 @@
-import flip from './flipper'
-import menu from './fullMenu'
-import initMap from './map'
-import parallax from './parallax'
+import flip from './common/flipper'
+import menu from './common/fullMenu'
+import initMap from './common/map'
+import parallax from './common/parallax'
 
 
 
