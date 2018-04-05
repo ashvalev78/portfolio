@@ -44,12 +44,18 @@
 /* 0 */
 /***/ (function(module, exports) {
 
-	import { parallax } from './common/parallax.js';
+	import flip from './flipper'
+	import menu from './fullMenu'
+	import initMap from './map'
+	import parallax from './parallax'
 
-	window.onload = start;
+
 
 	function start() {
 	    parallax();
+	    flip();
+	    initMap();
+	    menu();
 	}
 
 /***/ })
