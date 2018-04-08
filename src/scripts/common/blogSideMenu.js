@@ -14,13 +14,25 @@ export default function sideMenu() {
     let currentNum = 0;
     menuArray[currentNum].classList.add('active');
 
+
+    const marginLeft = articles.getBoundingClientRect().left;
+    const marginLeftMenu = mainMenu.getBoundingClientRect().left;
+
     function affixMenu() {
-        if ((mainMenu.getBoundingClientRect().top < 0) 
-        && articles.getBoundingClientRect().top < 0) {
+        if (articles.getBoundingClientRect().top < 0) {
             mainMenu.style.position = 'fixed';
-            mainMenu.style.top = '70px';
-            mainMenu.style.left = '40px';
-            articles.style.marginLeft = mainMenu.getBoundingClientRect.left();
+            mainMenu.style.top = '0';
+            mainMenu.style.marginLeft = '0px';
+            mainMenu.style.left = `${marginLeftMenu}px`;
+            mainMenu.style.paddingRight = getComputedStyle(articles).paddingLeft;
+            articles.style.marginLeft = `${marginLeft}px`;
+
+        } else {
+            mainMenu.style.position = 'relative';
+            mainMenu.style.left = `0`;
+            articles.style.marginLeft = '0';
+            mainMenu.style.marginLeft = `${marginLeftMenu}px`;
+            mainMenu.style.paddingRight = '0'
         }
     }
 

@@ -22,7 +22,7 @@
   }
 
   &__menu {
-    padding-left: pxRem(125px);
+    margin-left: pxRem(125px);
     width: pxRem(280px);
     margin-top: pxRem(25px);
     display: flex;
@@ -30,7 +30,7 @@
     align-items: flex-end;
 
     @include small-cont {
-      padding-left: pxRem(45px);
+      margin-left: pxRem(45px);
     }
 
     @include tablets {
@@ -39,23 +39,17 @@
 
     &-item {
       margin-bottom: pxRem(35px);
+      text-align: right;
+      padding-right: pxRem(20px);
+
 
       &-href {
-        text-align: right;
+        width: 100%;
         font-family: "Roboto Regular";
         color: #455a64;
-        padding-right: pxRem(20px);
       }
 
       &:hover {
-        border-right: pxRem(3px) solid #0ab19e;
-        transition: border-right .2s;
-        .blog__menu-item-href {
-          color: #0ab19e;
-        }
-      }
-
-      .active {
         border-right: pxRem(3px) solid #0ab19e;
         transition: border-right .2s;
         .blog__menu-item-href {
@@ -95,6 +89,14 @@
   .article__date {
     color: #c5ebe4;
     margin-bottom: pxRem(30px);
+  }
+}
+
+.blog__menu-item.active {
+  border-right: pxRem(3px) solid #0ab19e;
+  transition: border-right .2s;
+  .blog__menu-item-href {
+    color: #0ab19e;
   }
 }
 
