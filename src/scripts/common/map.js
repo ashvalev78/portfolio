@@ -1,4 +1,4 @@
-function initMap() {
+export default function initMap() {
     // Styles a map in night mode.
     var map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 59.846688, lng: 30.229678},

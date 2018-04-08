@@ -1,15 +1,17 @@
 include ../common/mixins
 
 mixin header(color1, color2, className)
-  ul.header__main-menu
-    li.header__main-menu__item 
-      a.header__main-menu-href(href="./my-works.html") Мои работы
-    li.header__main-menu
-      a.header__main-menu-href(href="./about.html") Обо мне
-    li.header__main-menu
-      a.header__main-menu-href(href="./blog.html") Блог
-    li.header__main-menu
-      a.header__main-menu-href(href="./index.html") Авторизация
+  .header__menu-block
+    ul.header__main-menu
+      li.header__main-menu__item 
+        a.header__main-menu-href(href="./my-works.html") Мои работы
+      li.header__main-menu
+        a.header__main-menu-href(href="./about.html") Обо мне
+      li.header__main-menu
+        a.header__main-menu-href(href="./blog.html") Блог
+      li.header__main-menu
+        a.header__main-menu-href(href="./index.html") Авторизация
+    a.header__back(href="#")
   section.section.hero
     .hero__top
       .hero__socials
@@ -19,7 +21,7 @@ mixin header(color1, color2, className)
               a(href="" class = 'href__socials')
                 +icon(`${item}`, "white_mod")
       .hero__hamburger
-        a.hamburger-href
+        a.hamburger-href(href="#")
           +icon('hamburger', 'ham_mod')
     .hero__description-menu
       .hero__img
@@ -38,6 +40,17 @@ mixin header(color1, color2, className)
         g
 
 mixin blog-header(color1) 
+  .header__menu-block
+    ul.header__main-menu
+      li.header__main-menu__item 
+        a.header__main-menu-href(href="./my-works.html") Мои работы
+      li.header__main-menu
+        a.header__main-menu-href(href="./about.html") Обо мне
+      li.header__main-menu
+        a.header__main-menu-href(href="./blog.html") Блог
+      li.header__main-menu
+        a.header__main-menu-href(href="./index.html") Авторизация
+    a.header__back(href="#").blog__back
   section.section.hero.blog__header
     .hero__top
       .hero__socials
@@ -47,7 +60,7 @@ mixin blog-header(color1)
               a(href="" class = 'href__socials')
                 +icon(`${item}`, "white_mod")
       .hero__hamburger
-        a.hamburger-href
+        a.hamburger-href(href="#")
           +icon('hamburger', 'ham_mod')
     .hero__description-menu
       .hero__img

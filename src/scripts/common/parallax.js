@@ -1,4 +1,4 @@
-function parallax() {
+export default function parallax() {
 
     const parallaxSection = document.getElementById('parallax-section');
     const layers = parallaxSection.children;
@@ -20,5 +20,3 @@ function parallax() {
 
     window.addEventListener('mousemove', move);
 }
-
-window.onload = start;
