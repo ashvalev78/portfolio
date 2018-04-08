@@ -11,3 +11,5 @@ function start() {
     initMap();
     menu();
 }
+
+window.onload = start;

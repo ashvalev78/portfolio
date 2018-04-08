@@ -6,6 +6,7 @@ const $gp = require("gulp-load-plugins")();
 const browserSync = require("browser-sync").create();
 const reload = browserSync.reload;
 const webpack = require("webpack");
+const mergeStream = require("merge-stream");
 const webpackConfig = require("./webpack.config.js");
 const moduleImporter = require("sass-module-importer");
 const del = require("del");
@@ -13,6 +14,7 @@ const pug = require("gulp-pug");
 
 const SRC_DIR = "src";
 const DIST_DIR = "build";
+const DIST_ASSETS = "build/assets";
 const ROOT_PATH = `./${DIST_DIR}`;
 
 // стили
@@ -36,7 +38,7 @@ gulp.task("styles", () => {
     )
     .pipe($gp.sourcemaps.write())
     .pipe($gp.rename({ suffix: ".min" }))
-    .pipe(gulp.dest(`${DIST_DIR}/styles/`))
+    .pipe(gulp.dest(`${DIST_ASSETS}/styles/`))
     .pipe(reload({ stream: true }));
 });
 
@@ -56,7 +58,7 @@ gulp.task("scripts", () => {
     .src(`${SRC_DIR}/scripts/app.js`)
     .pipe($gp.plumber())
     .pipe($gp.webpack(webpackConfig, webpack))
-    .pipe(gulp.dest(`${DIST_DIR}/scripts`))
+    .pipe(gulp.dest(`${DIST_ASSETS}/scripts`))
     .pipe(reload({ stream: true }));
 });
 
@@ -83,7 +85,7 @@ gulp.task(
     browserSync.init({
       proxy: "http://localhost:3000",
       port: 8080,
-      open: true
+      open: false
     });
   })
 );
@@ -116,7 +118,7 @@ gulp.task("svg", done => {
       .pipe($gp.replace("&gt;", ">"));
   };
 
-  prettySvgs()
+  let svgSprite = prettySvgs()
     .pipe(
       $gp.svgSprite({
         mode: {
@@ -126,35 +128,30 @@ gulp.task("svg", done => {
         }
       })
     )
-    .pipe(gulp.dest(`${DIST_DIR}/images/icons`));
-
-  prettySvgs().pipe(
+    .pipe(gulp.dest(`${DIST_ASSETS}/images/icons`));
+  
+  let svgInline = prettySvgs().pipe(
     $gp.sassInlineSvg({
       destDir: `${SRC_DIR}/styles/icons/`
     })
   );
 
-  done();
-});
-
-// pug
-gulp.task( 'templates', () => {
-  return gulp.src(`${SRC_DIR}/templates/pages/*.pug`)
-      // .pipe(pug({pretty: true}))
-      .pipe(gulp.dest(`${DIST_DIR}`));
+  return mergeStream(svgSprite, svgInline);
 });
 
 // просто переносим картинки
 gulp.task("images", () => {
   return gulp
     .src([`${SRC_DIR}/images/**/*.*`, `!${SRC_DIR}/images/icons/*.*`])
-    .pipe(gulp.dest(`${DIST_DIR}/images/`));
+    .pipe(gulp.dest(`${DIST_ASSETS}/images/`));
 });
 
-gulp.task('build', gulp.series(
-  "svg",
-  gulp.parallel("styles", "images", "fonts", "scripts")
-));
+// pug
+gulp.task("templates", () => {
+  return gulp.src(`${SRC_DIR}/templates/pages/*.pug`)
+      .pipe(pug({pretty: true}))
+      .pipe(gulp.dest(`${DIST_DIR}`));
+});
 
 // галповский вотчер
 gulp.task("watch", () => {
@@ -162,17 +159,23 @@ gulp.task("watch", () => {
   gulp.watch(`${SRC_DIR}/images/**/*.*`, gulp.series("images"));
   gulp.watch(`${SRC_DIR}/scripts/**/*.js`, gulp.series("scripts"));
   gulp.watch(`${SRC_DIR}/fonts/*`, gulp.series("fonts"));
-  gulp.watch(`${SRC_DIR}/templates/**/*.*`, gulp.series("templates"));
-  gulp.watch(`${DIST_DIR}`).on('change', reload);
-  gulp.watch()
+  gulp.watch(`${SRC_DIR}/templates/**/*.pug`, gulp.series("templates"));
+  gulp.watch(`${SRC_DIR}/*`).on("change", reload);
 });
+
+
+gulp.task('build', gulp.series(
+  "svg",
+  gulp.parallel("styles", "images", "fonts", "scripts", "templates")
+));
 
 // GULP:RUN
 gulp.task(
   "default",
   gulp.series(
     "clean",
-    gulp.parallel("styles", "images", "fonts", "scripts", "svg", "templates"),
+    "svg",
+    gulp.parallel("styles", "images", "fonts", "scripts", "templates"),
     gulp.parallel("watch", "server")
   )
 );

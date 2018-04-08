@@ -7,8 +7,8 @@ module.exports = {
     main: path.resolve(__dirname, "src/scripts/app.js")
   },
   output: {
-    path: path.resolve(__dirname, "public/scripts"),
-    publicPath: "/public/",
+    path: path.resolve(__dirname, "views/scripts"),
+    publicPath: "/views/",
     filename: "[name].bundle.js"
   },
   module: {
@@ -22,7 +22,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      vue$: 'vue/dist/vue.esm.js'
+      vue$: 'vue/views/vue.esm.js'
     }
   },
   devtool: '#eval-source-map'

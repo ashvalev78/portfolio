@@ -1,4 +1,4 @@
-function flip() {
+export default function flip() {
     const authButton = document.querySelector('.hero__auth');
     const flipper = document.querySelector('.hero__flipper');
     const toMain = document.querySelector('.auth__back');
