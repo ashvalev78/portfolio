@@ -22,15 +22,16 @@
   }
 
   &__menu {
-    margin-left: pxRem(125px);
+    left: pxRem(125px);
     width: pxRem(280px);
-    margin-top: pxRem(25px);
+    top: pxRem(80px);
     display: flex;
     flex-flow: column;
     align-items: flex-end;
+    position: absolute;
 
     @include small-cont {
-      margin-left: pxRem(45px);
+      left: pxRem(45px);
     }
 
     @include tablets {
@@ -147,7 +148,7 @@
         font-family: "Roboto Medium";
       }
 
-      .active {
+      &.active {
         color: white;
         font-family: "Roboto Medium";
       }
