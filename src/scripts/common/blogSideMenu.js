@@ -7,20 +7,34 @@ export default function sideMenu() {
     const mainMenu = document.querySelector('.blog__menu')
     const mainMenuArray = Array.from(mainMenu.children);
 
-    console.log(mainMenuArray);
-
     const articles = document.querySelector('.blog__content');
     const artArray = Array.from(articles.children);
     let currentNum = 0;
     menuArray[currentNum].classList.add('active');
 
+
+    const marginLeft = mainMenu.getBoundingClientRect().right;
+    const marginLeftMenu = mainMenu.getBoundingClientRect().left;
+    articles.style.marginLeft = `${marginLeft}px`;
+    const menuTop = getComputedStyle(mainMenu).top;
+
+
     function affixMenu() {
-        if ((mainMenu.getBoundingClientRect().top < 0) 
-        && articles.getBoundingClientRect().top < 0) {
+        if (articles.getBoundingClientRect().top < 0) {
             mainMenu.style.position = 'fixed';
-            mainMenu.style.top = '70px';
-            mainMenu.style.left = '40px';
-            articles.style.marginLeft = mainMenu.getBoundingClientRect.left();
+            mainMenu.style.top = '15px';
+            // mainMenu.style.marginLeft = '0px';
+            // mainMenu.style.left = `${marginLeftMenu}px`;
+            // mainMenu.style.paddingRight = getComputedStyle(articles).paddingLeft;
+            // articles.style.marginLeft = `${marginLeft}px`;
+
+        } else {
+            mainMenu.style.position = 'absolute';
+            mainMenu.style.top = menuTop;
+            // mainMenu.style.left = `0`;
+            // articles.style.marginLeft = '0';
+            // mainMenu.style.marginLeft = `${marginLeftMenu}px`;
+            // mainMenu.style.paddingRight = '0'
         }
     }
 
