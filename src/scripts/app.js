@@ -3,6 +3,7 @@ import menu from './common/fullMenu'
 import initMap from './common/map'
 import parallax from './common/parallax'
 import blur from './common/blur'
+import sideMenu from './common/blogSideMenu'
 
 
 
@@ -21,6 +22,9 @@ function start() {
     }
     if (name === "my-works.html") {
         blur();
+    }
+    if (name === 'blog.html') {
+        sideMenu();
     }
 }
 

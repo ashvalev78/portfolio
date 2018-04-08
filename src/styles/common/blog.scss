@@ -3,12 +3,13 @@
 
   &__content-main {
     padding-top: pxRem(50px);
-    height: pxRem(1267px);
+    // height: pxRem(1267px);
     position: relative;
 
     display: flex;
 
     justify-content: center;
+    padding-bottom: pxRem(270px);
   }
 
   &__bg {
@@ -22,6 +23,7 @@
 
   &__menu {
     padding-left: pxRem(125px);
+    width: pxRem(280px);
     margin-top: pxRem(25px);
     display: flex;
     flex-flow: column;
@@ -52,16 +54,21 @@
           color: #0ab19e;
         }
       }
+
+      .active {
+        border-right: pxRem(3px) solid #0ab19e;
+        transition: border-right .2s;
+        .blog__menu-item-href {
+          color: #0ab19e;
+        }
+      }
     }
   }
 
   &__content {
     width: pxRem(1000px);
-    height: pxRem(1070px);
     padding-left: pxRem(80px);
     margin-right: pxRem(210px);
-    overflow: scroll;
-    overflow-x: hidden;
 
     @include small-cont {
       margin-right: pxRem(90px);
@@ -71,7 +78,7 @@
       padding: 0;
       margin-right: pxRem(24px);
       margin-left: pxRem(24px);
-      height: pxRem(940px);
+      // height: pxRem(940px);
     }
 
     &-article {
@@ -102,6 +109,11 @@
   width: pxRem(8px);
   height: pxRem(40px);
   border-radius: 0 100% 100% 0 / 0 50% 50% 0;
+  display: none;
+
+  @include tablets {
+    display: block;
+  }
 }
 
 .blog__menu-phones {
@@ -129,6 +141,11 @@
       font-family: "Roboto Regular";
 
       &:hover {
+        color: white;
+        font-family: "Roboto Medium";
+      }
+
+      .active {
         color: white;
         font-family: "Roboto Medium";
       }
