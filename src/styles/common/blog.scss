@@ -107,25 +107,39 @@
   background-color: #00bfa5;
   position: fixed;
   top: 50%;
-  left: 0;
+  left: pxRem(284px);
   z-index: 100;
   width: pxRem(8px);
   height: pxRem(40px);
   border-radius: 0 100% 100% 0 / 0 50% 50% 0;
   display: none;
+  transform: translateX(- pxRem(284px));
 
   @include tablets {
     display: block;
   }
 }
 
-.blog__menu-phones {
-  position: absolute;
+.blog__menu-phones-bg {
+  position: fixed;
   left: 0;
   top: 0;
   height: 100%;
   width: pxRem(284px);
   transform: translateX(-100%);
+  transition: transform .5s;
+  background-color: #00bfa5;
+  z-index: 100;
+}
+
+.blog__menu-phones {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: pxRem(284px);
+  transform: translateX(-100%);
+  transition: transform .5s;
   background-color: #00bfa5;
   z-index: 100;
   display: flex;
@@ -147,11 +161,17 @@
         color: white;
         font-family: "Roboto Medium";
       }
-
-      &.active {
-        color: white;
-        font-family: "Roboto Medium";
-      }
     }
   }
+}
+
+.blog__menu-phones-item.active {
+  .blog__menu-phones-item-href {
+    color: white;
+    font-family: "Roboto Medium";
+  }
+}
+
+.menu-opened {
+  transform: none;
 }

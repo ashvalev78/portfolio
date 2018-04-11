@@ -31,7 +31,8 @@ block content
 
     include ../common/footer.pug        
   a.phones__menu-button(href="#")
-  ul.blog__menu-phones
-    each item in articles
-      li.blog__menu-phones-item
-        a.blog__menu-phones-item-href !{item}
+  .blog__menu-phones-bg
+    ul.blog__menu-phones
+      each item in articles
+        li.blog__menu-phones-item
+          a.blog__menu-phones-item-href !{item}
