@@ -13,6 +13,7 @@ export default function menu() {
     });
 
     closeButton.addEventListener('click', (e) => {
+        e.preventDefault();
         burger.style.display = 'block';
         menu.classList.remove('active');
         body.style.overflow = 'visible';
