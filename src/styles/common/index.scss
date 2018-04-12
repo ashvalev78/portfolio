@@ -412,3 +412,9 @@
   font-size: pxRem(16px);
   margin-left: pxRem(7px);
 }
+
+.auth__form {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}

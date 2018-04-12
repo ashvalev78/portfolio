@@ -44,30 +44,31 @@ block content
         .hero__authorization
           .hero__authorization-form
             h2.auth__title Авторизация
-            .auth__inputs
-              li.auth__input
-                .auth__input-img
-                  +icon('login', 'login_mod')
-                input.auth__input-input( placeholder="Логин" name ="log")
-              li.auth__input
-                .auth__input-img
-                  +icon('password', 'login_mod')
-                input.auth__input-input( placeholder="Пароль" name="pass")
-            .auth__checks
-              .human__box
-                input.checkbox__elem(type="checkbox" name='robot check')
-                .checkbox__elem-fake
-                .checkbox__descr Я человек
-              h2.auth__checks-check Вы точно не робот?
-              .auth__checks__second
-                .auth__checks__second-block
-                  input.auth__checks__second-check(type="radio" name='robot')
-                  .auth__checks__second-check-fake
-                  .check__text Да
-                .auth__checks__second-block.second-block
-                  input.auth__checks__second-check(type="radio" name='robot')
-                  .auth__checks__second-check-fake
-                  .check__text Не уверен
+            form.auth__form
+              .auth__inputs
+                li.auth__input
+                  .auth__input-img
+                    +icon('login', 'login_mod')
+                  input.auth__input-input( placeholder="Логин" name ="log")
+                li.auth__input
+                  .auth__input-img
+                    +icon('password', 'login_mod')
+                  input.auth__input-input( placeholder="Пароль" name="pass")
+              .auth__checks
+                .human__box
+                  input.checkbox__elem(type="checkbox" name='robot check')
+                  .checkbox__elem-fake
+                  .checkbox__descr Я человек
+                h2.auth__checks-check Вы точно не робот?
+                .auth__checks__second
+                  .auth__checks__second-block
+                    input.auth__checks__second-check(type="radio" name='robot')
+                    .auth__checks__second-check-fake
+                    .check__text Да
+                  .auth__checks__second-block.second-block
+                    input.auth__checks__second-check(type="radio" name='robot')
+                    .auth__checks__second-check-fake
+                    .check__text Не уверен
             ul.back__menu
               li.back__item
                 a.back__buttons.auth__back(href="") На главную

@@ -6,6 +6,7 @@ import blur from './common/blur'
 import sideMenu from './common/blogSideMenu'
 import topArrowScroll from './common/allTopArrowsScroll'
 import filledSkills from './common/filledSkills'
+import bottomArrow from './common/worksButtonArrow'
 
 
 
@@ -26,6 +27,7 @@ function start() {
     }
     if (name === "my-works.html") {
         blur();
+        bottomArrow();
     }
     if (name === 'blog.html') {
         sideMenu();
