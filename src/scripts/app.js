@@ -4,6 +4,7 @@ import initMap from './common/map'
 import parallax from './common/parallax'
 import blur from './common/blur'
 import sideMenu from './common/blogSideMenu'
+import topArrowScroll from './common/allTopArrowsScroll'
 
 
 
@@ -12,6 +13,7 @@ function start() {
     const name = s.substr(s.lastIndexOf("/")+1);
     if (name !== "index.html") {
         menu();
+        topArrowScroll();
     }
     if (name === "index.html") {
         parallax();
