@@ -5,6 +5,7 @@ import parallax from './common/parallax'
 import blur from './common/blur'
 import sideMenu from './common/blogSideMenu'
 import topArrowScroll from './common/allTopArrowsScroll'
+import filledSkills from './common/filledSkills'
 
 
 
@@ -20,6 +21,7 @@ function start() {
         flip();
     }
     if (name === "about.html") {
+        filledSkills();
         initMap();
     }
     if (name === "my-works.html") {
