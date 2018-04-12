@@ -58,16 +58,14 @@ export default function sideMenu() {
     mainMenuArray.forEach((item, i) => {
         item.addEventListener('click', (e) => {
             e.preventDefault();
-
-           window.scrollTo(0, offsetsArray[i]);
+            softScroll(document.documentElement, offsetsArray[i], 650);
         });
     });
 
     menuArray.forEach((item, i) => {
         item.addEventListener('click', (e) => {
             e.preventDefault();
-
-           window.scrollTo(0, offsetsArray[i]);
+            softScroll(document.body, offsetsArray[i], 650);
         });
     });
 
@@ -75,6 +73,8 @@ export default function sideMenu() {
 
     function affixMenu() {
         if (articles.getBoundingClientRect().top < 0) {
+
+
             // Main menu and articles operations
 
             mainMenu.style.position = 'fixed';
@@ -93,6 +93,8 @@ export default function sideMenu() {
             }
 
         } else {
+
+
             //Main menu and articles operations
 
             mainMenu.style.position = 'absolute';
@@ -105,6 +107,7 @@ export default function sideMenu() {
             // mainMenu.style.paddingRight = '0'
 
             //Side menu operations
+
             if (!sideMenu.classList.contains('menu-opened')) {
                 phonesButton.style.display = 'none';
             }
