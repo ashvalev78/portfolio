@@ -61,7 +61,7 @@ block content
               textarea.user__msg(placeholder = 'Сообщение')
             .form__buttons
               button.enter__msg.but Отправить
-              button.delete__msg.but Очистить
-      a.arrow__back
+              input.delete__msg.but(type = 'reset' value = 'Очистить')
+      a.arrow__back(href="#")
         +icon('portf-arrow-up', 'white_mod')
   include ../common/footer
